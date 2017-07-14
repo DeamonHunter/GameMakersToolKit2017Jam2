@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour {
 
-    public static float health;
-    public Text text;
+    Text healthText;
+    public PlayerController pc;
 
-	// Use this for initialization
-	void Start () {
-        health = 10.0f;
+    // Use this for initialization
+    void Start () {
+        healthText = this.GetComponent<Text>();
+        pc.GetComponent<PlayerController>();
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        text.text = "Health: " + health;
-		
-	}
+        //update health
+        healthText.text = "Health: " + pc.curHealth;
+    }
 }
