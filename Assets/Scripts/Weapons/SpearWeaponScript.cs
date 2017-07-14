@@ -19,7 +19,8 @@ public class SpearWeaponScript : BaseWeaponScript {
 
     void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("Entered");
-        if (other.tag == "Enemy") {
+        var enemy = other.gameObject.GetComponent<EnemyBase>();
+        if (enemy != null) {
             Destroy(other.gameObject);
             Player.CurStamina += StaminaGainFromEnemy;
         }

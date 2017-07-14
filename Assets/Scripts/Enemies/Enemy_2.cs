@@ -2,25 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_2 : MonoBehaviour {
-
-    public float moveSpeed = 3.0f;
-    public float health = 2.0f;
+public class Enemy_2 : EnemyBase {
     public GameObject enemyProjectile;
     public float enemyFireRate = 1f;
+
     private float enemyFireTime;
     private float newDirectionTime;
     private float newDirectionRate = 1.5f;
     private int movementDirection;
 
-
-    // Use this for initialization
-    void Start() {
-
-    }
-
     // Update is called once per frame
-    void Update() {
+    protected override void Update() {
         Shoot();
         Movement();
     }
@@ -56,13 +48,4 @@ public class Enemy_2 : MonoBehaviour {
 
         }
     }
-
-    public void takeDamage(float damage) {
-        health -= damage;
-        if (health <= 0) {
-            Destroy(this.gameObject);
-        }
-    }
-
-
 }

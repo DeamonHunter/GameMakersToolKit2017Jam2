@@ -2,35 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_1 : MonoBehaviour {
+public abstract class EnemyBase : MonoBehaviour {
+    protected GameObject Player;
 
     public float moveSpeed = 5.0f;
     public float health = 1.0f;
     public float damage = 1.0f;
-    private float damageRate = 0.2f;
+    public float damageRate = 0.2f;
     private float damageTime;
 
 
     // Use this for initialization
-    void Start () {
-  
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        Movement();
+    void Start() {
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Movement() {
-        if (GameManager.instance.player) {
-            transform.position = Vector2.MoveTowards(transform.position, GameManager.instance.player.transform.position, moveSpeed *
-            Time.deltaTime);
-        }
+    // Update is called once per frame
+    protected abstract void Update();
 
-        
-    }
-
-    public void takeDamage(float damage) {
+    public virtual void takeDamage(float damage) {
         health -= damage;
         if (health <= 0) {
             Destroy(this.gameObject);
@@ -39,10 +29,8 @@ public class Enemy_1 : MonoBehaviour {
 
     private void OnCollisionStay2D(Collision2D other) {
         if (other.transform.tag == "Player" && Time.time > damageTime) {
-            other.transform.GetComponent<Player>().takeDamage(damage);
+            other.transform.GetComponent<PlayerController>().TakeDamage(damage);
             damageTime = Time.time + damageRate;
         }
     }
-
-
 }
