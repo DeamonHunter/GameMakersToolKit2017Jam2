@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour {
     public Vector3 HalfScreenSize;
     public Slider slider;
 
+    public GameObject[] ChooseableWeapons;
+    private GameObject curWeapon;
+
     public float MaxHealth;
     public float MaxStamina;
     public float Speed;
@@ -31,7 +34,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-        weapon = GetComponentInChildren<BaseWeaponScript>();
+        RandomWeapon();
         curStamina = MaxStamina;
         curHealth = MaxHealth;
         HalfScreenSize = new Vector3(Screen.width, Screen.height) / 2;
@@ -77,5 +80,14 @@ public class PlayerController : MonoBehaviour {
         if (curHealth <= 0) {
             gameObject.SetActive(false);
         }
+    }
+
+    public void RandomWeapon() {
+        if (curWeapon != null)
+            Destroy(curWeapon);
+        int rand = Random.Range(0, ChooseableWeapons.Length);
+        curWeapon = Instantiate(ChooseableWeapons[rand], transform.position, transform.rotation, transform);
+        weapon = curWeapon.GetComponent<BaseWeaponScript>();
+
     }
 }

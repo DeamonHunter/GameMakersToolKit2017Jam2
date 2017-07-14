@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class BaseWeaponScript : MonoBehaviour {
     public Vector2 StartOffset;
+    public float StartRotation;
     public PlayerController Player;
     public float AttackForce;
     public float AttackTimeout;
@@ -21,6 +22,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     void Start() {
         Player = transform.parent.gameObject.GetComponent<PlayerController>();
         transform.localPosition = StartOffset;
+        transform.localRotation = Quaternion.Euler(0, 0, StartRotation);
     }
 
     void Update() {
@@ -30,4 +32,18 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     }
 
     public abstract float Attack();
+
+    void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Entered");
+        var enemy = other.gameObject.GetComponent<EnemyBase>();
+        if (enemy != null) {
+            Destroy(other.gameObject);
+            Player.CurStamina += StaminaGainFromEnemy;
+        }
+        else if (other.tag == "Crate") {
+            Destroy(other.gameObject);
+            Player.RandomWeapon();
+
+        }
+    }
 }
