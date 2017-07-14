@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public Vector3 HalfScreenSize;
     public Slider slider;
 
+    public float MaxHealth;
     public float MaxStamina;
     public float Speed;
     public float StaminaDepletionRate;
@@ -25,12 +26,14 @@ public class PlayerController : MonoBehaviour {
 
     private float staminaCooldown;
     private float curStamina;
+    private float curHealth;
 
     // Use this for initialization
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         weapon = GetComponentInChildren<SpearWeaponScript>();
         curStamina = MaxStamina;
+        curHealth = MaxHealth;
         HalfScreenSize = new Vector3(Screen.width, Screen.height) / 2;
     }
 
@@ -43,7 +46,7 @@ public class PlayerController : MonoBehaviour {
         var angle = Mathf.Atan2(pos.y, pos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && weapon.staminaUse < CurStamina)
             CurStamina -= weapon.Attack();
 
         RegainStamina();
@@ -67,5 +70,12 @@ public class PlayerController : MonoBehaviour {
         curStamina += Time.deltaTime * StaminaGainRate;
         if (curStamina > MaxStamina)
             curStamina = MaxStamina;
+    }
+
+    public void TakeDamage(float damage) {
+        curHealth -= damage;
+        if (curHealth <= 0) {
+            gameObject.SetActive(false);
+        }
     }
 }
