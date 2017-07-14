@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
 
     private float staminaCooldown;
     private float curStamina;
-    private float curHealth;
+    public float curHealth;
 
     // Use this for initialization
     void Start() {
@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour {
             CurStamina -= weapon.Attack();
 
         RegainStamina();
+
+        
     }
 
     private void Movement() {
@@ -78,4 +80,6 @@ public class PlayerController : MonoBehaviour {
             gameObject.SetActive(false);
         }
     }
+
+    
 }
