@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Enemy_2 : MonoBehaviour {
 
-    public float moveSpeed = 5.0f;
-    public float health = 1.0f;
-    public float damage = 1.0f;
-    private float damageRate = 0.2f;
-    private float damageTime;
-    public Transform target;
+    public float moveSpeed = 3.0f;
+    public float health = 2.0f;
     public GameObject enemyProjectile;
+    public float enemyFireRate = 1f;
+    private float enemyFireTime;
+
 
     // Use this for initialization
     void Start() {
@@ -19,18 +18,24 @@ public class Enemy_2 : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        Shoot();
         Movement();
     }
 
-    private void Movement() {
-        if (target) {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed *
-            Time.deltaTime);
+    private void Shoot() {
+        if (GameManager.instance.player && Time.time > enemyFireTime) {
+            Vector3 dir = GameManager.instance.player.transform.position - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             Instantiate(enemyProjectile, transform.position, transform.rotation);
+            enemyFireTime = Time.time + enemyFireRate;
         }
+    }
 
+    private void Movement() {
 
     }
+
 
     public void takeDamage(float damage) {
         health -= damage;
@@ -39,10 +44,5 @@ public class Enemy_2 : MonoBehaviour {
         }
     }
 
-    private void OnCollisionStay2D(Collision2D other) {
-        if (other.transform.tag == "Player" && Time.time > damageTime) {
-            other.transform.GetComponent<Player>().takeDamage(damage);
-            damageTime = Time.time + damageRate;
-        }
-    }
+    
 }
