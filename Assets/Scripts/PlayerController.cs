@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb;
-    private SpearWeaponScript weapon;
+    private BaseWeaponScript weapon;
     public Vector3 HalfScreenSize;
     public Slider slider;
 
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-        weapon = GetComponentInChildren<SpearWeaponScript>();
+        weapon = GetComponentInChildren<BaseWeaponScript>();
         curStamina = MaxStamina;
         curHealth = MaxHealth;
         HalfScreenSize = new Vector3(Screen.width, Screen.height) / 2;
