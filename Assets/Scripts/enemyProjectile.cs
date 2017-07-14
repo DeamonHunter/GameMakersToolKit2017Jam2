@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class enemyProjectile : MonoBehaviour {
 
-    public float lifeTime = 200.0f;
-    public float moveSpeed = 15.0f;
+    public float lifeTime = 3.0f;
+    public float moveSpeed = 50.0f;
     public float enemyDamage = 2.0f;
 
 
@@ -21,6 +21,7 @@ public class enemyProjectile : MonoBehaviour {
     //travel forward
     private void Movement() {
         transform.position += Time.deltaTime * moveSpeed * transform.right;
+        
     }
 
     //Have playertake damage when hit

@@ -52,10 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4510d03f725f9df4a877ddffdb224b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 200
-  moveSpeed: 15
+  lifeTime: 3
+  moveSpeed: 50
   enemyDamage: 2
-  target: {fileID: 0}
 --- !u!212 &212086089640841138
 SpriteRenderer:
   m_ObjectHideFlags: 1

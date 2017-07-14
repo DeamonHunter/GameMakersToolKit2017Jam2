@@ -9,7 +9,7 @@ public class Enemy_1 : MonoBehaviour {
     public float damage = 1.0f;
     private float damageRate = 0.2f;
     private float damageTime;
-    public Transform target;
+
 
     // Use this for initialization
     void Start () {
@@ -22,8 +22,8 @@ public class Enemy_1 : MonoBehaviour {
     }
 
     private void Movement() {
-        if (target) {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed *
+        if (GameManager.instance.player) {
+            transform.position = Vector2.MoveTowards(transform.position, GameManager.instance.player.transform.position, moveSpeed *
             Time.deltaTime);
         }
 

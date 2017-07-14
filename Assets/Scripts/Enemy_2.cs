@@ -7,9 +7,8 @@ public class Enemy_2 : MonoBehaviour {
     public float moveSpeed = 3.0f;
     public float health = 2.0f;
     public GameObject enemyProjectile;
-    public float enemyFireRate = 0.40f;
+    public float enemyFireRate = 1f;
     private float enemyFireTime;
-    public Transform target;
 
 
     // Use this for initialization
@@ -20,13 +19,21 @@ public class Enemy_2 : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         Shoot();
+        Movement();
     }
 
     private void Shoot() {
-        if (target && Time.time > enemyFireTime) {
+        if (GameManager.instance.player && Time.time > enemyFireTime) {
+            Vector3 dir = GameManager.instance.player.transform.position - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             Instantiate(enemyProjectile, transform.position, transform.rotation);
             enemyFireTime = Time.time + enemyFireRate;
         }
+    }
+
+    private void Movement() {
+
     }
 
 
