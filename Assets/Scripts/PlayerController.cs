@@ -13,6 +13,17 @@ public class PlayerController : MonoBehaviour {
     public float Speed;
     public float StaminaDepletionRate;
     public float StaminaGainRate;
+    public float StaminaCooldownPeriod;
+
+    public float CurStamina {
+        get { return curStamina; }
+        set {
+            curStamina = value;
+            staminaCooldown = Time.time + StaminaCooldownPeriod;
+        }
+    }
+
+    private float staminaCooldown;
     private float curStamina;
 
     // Use this for initialization
@@ -33,7 +44,9 @@ public class PlayerController : MonoBehaviour {
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
         if (Input.GetMouseButton(0))
-            weapon.Attack();
+            CurStamina -= weapon.Attack();
+
+        RegainStamina();
     }
 
     private void Movement() {
@@ -41,16 +54,18 @@ public class PlayerController : MonoBehaviour {
         if (movement.magnitude > 0.1) {
             if (curStamina > 0) {
                 //Debug.Log(curStamina + ":" + Mathf.Log(curStamina / MaxStamina + 1));
-                transform.position += new Vector3(movement.x, movement.y) * Speed * Mathf.Log(curStamina / MaxStamina + 1) * Time.deltaTime;
-
-                curStamina -= StaminaDepletionRate * Time.deltaTime;
+                //transform.position += new Vector3(movement.x, movement.y) * Speed * Mathf.Log(curStamina / MaxStamina + 1) * Time.deltaTime;
+                rb.AddForce(movement * Speed * Mathf.Log(curStamina / MaxStamina + 1));
+                CurStamina -= StaminaDepletionRate * Time.deltaTime;
             }
         }
-        else {
-            if (curStamina < MaxStamina)
-                curStamina += Time.deltaTime * StaminaGainRate;
-            else
-                curStamina = MaxStamina;
-        }
+    }
+
+    private void RegainStamina() {
+        if (Time.time < staminaCooldown)
+            return;
+        curStamina += Time.deltaTime * StaminaGainRate;
+        if (curStamina > MaxStamina)
+            curStamina = MaxStamina;
     }
 }

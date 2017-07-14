@@ -1,18 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Assertions.Comparers;
+﻿using UnityEngine;
 
 public class SpearWeaponScript : MonoBehaviour {
 
     public Vector2 StartOffset;
     public GameObject Player;
-    public float AttackVelocity;
-    public float Deceleration;
+    public float AttackForce;
+    public float AttackTimeout;
+    public float staminaUse;
 
-    private Vector2 moveDirection;
-    private float movespeed;
-    private bool attacked;
+    private bool _attacking;
+    private float _lastAttack;
+
 
     // Use this for initialization
     void Start() {
@@ -21,25 +19,21 @@ public class SpearWeaponScript : MonoBehaviour {
     }
 
     void Update() {
-        //Player.transform.position = Player.transform.position + moveDirection * movespeed * Time.deltaTime;
-        if (attacked) {
-            if (movespeed < 0.1)
-                attacked = false;
-            else {
-                var hit = Physics2D.Raycast(transform.position, moveDirection, movespeed * Time.deltaTime);
-                if (hit.collider != null) {
-                    Player.transform.position += new Vector3(moveDirection.x, moveDirection.y) * movespeed * Time.deltaTime;
-                    movespeed -= Deceleration * Time.deltaTime;
-                }
-            }
+        if (_attacking && _lastAttack + AttackTimeout < Time.time) {
+            _attacking = false;
         }
     }
 
-    public void Attack() {
+    public float Attack() {
+        if (_attacking)
+            return 0;
+
         Debug.Log("Attacking");
+
         var pos = Input.mousePosition - new Vector3(Screen.width, Screen.height) / 2;
-        moveDirection = pos.normalized;
-        attacked = true;
-        movespeed = AttackVelocity;
+        Player.GetComponent<Rigidbody2D>().AddForce(pos.normalized * AttackForce, ForceMode2D.Impulse);
+        _lastAttack = Time.time;
+        _attacking = true;
+        return staminaUse;
     }
 }
