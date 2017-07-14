@@ -16,13 +16,4 @@ public class BroadSwordWeaponScript : BaseWeaponScript {
         GetComponent<Animation>().Play();
         return staminaUse;
     }
-
-    void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Entered");
-        var enemy = other.gameObject.GetComponent<EnemyBase>();
-        if (enemy != null) {
-            Destroy(other.gameObject);
-            Player.CurStamina += StaminaGainFromEnemy;
-        }
-    }
 }
