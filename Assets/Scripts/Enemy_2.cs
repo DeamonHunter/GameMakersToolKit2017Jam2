@@ -11,6 +11,7 @@ public class Enemy_2 : MonoBehaviour {
     private float enemyFireTime;
     private float newDirectionTime;
     private float newDirectionRate = 1.5f;
+    private int movementDirection;
 
 
     // Use this for initialization
@@ -36,18 +37,24 @@ public class Enemy_2 : MonoBehaviour {
 
     private void Movement() {
         if (Time.time > newDirectionTime) {
-            int number = Random.Range(1, 4);
-            if (number == 1) 
-                transform.position += Time.deltaTime * moveSpeed * transform.right;
-            if (number == 2)
-                transform.position += Time.deltaTime * moveSpeed * -transform.right;
-            if (number == 3)
-                transform.position += Time.deltaTime * moveSpeed * transform.up;
-            if (number == 4)
-                transform.position += Time.deltaTime * moveSpeed * -transform.up;
+            movementDirection = Random.Range(1, 4);
             newDirectionTime = Time.time + newDirectionRate;
         }
+        switch (movementDirection) {
+            case 1:
+                transform.position += Time.deltaTime * moveSpeed * transform.right;
+                break;
+            case 2:
+                transform.position += Time.deltaTime * moveSpeed * -transform.right;
+                break;
+            case 3:
+                transform.position += Time.deltaTime * moveSpeed * transform.up;
+                break;
+            case 4:
+                transform.position += Time.deltaTime * moveSpeed * -transform.up;
+                break;
 
+        }
     }
 
     public void takeDamage(float damage) {
@@ -57,5 +64,5 @@ public class Enemy_2 : MonoBehaviour {
         }
     }
 
-    
+
 }
