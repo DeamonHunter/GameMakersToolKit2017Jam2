@@ -34,6 +34,14 @@ public class SpearWeaponScript : MonoBehaviour {
         Player.GetComponent<Rigidbody2D>().AddForce(pos.normalized * AttackForce, ForceMode2D.Impulse);
         _lastAttack = Time.time;
         _attacking = true;
+        GetComponent<Animation>().Stop();
+        GetComponent<Animation>().Play();
         return staminaUse;
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Entered");
+        if (other.tag == "Enemy")
+            Destroy(other.gameObject);
     }
 }
