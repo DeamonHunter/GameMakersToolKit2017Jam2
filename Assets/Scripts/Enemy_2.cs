@@ -9,6 +9,8 @@ public class Enemy_2 : MonoBehaviour {
     public GameObject enemyProjectile;
     public float enemyFireRate = 1f;
     private float enemyFireTime;
+    private float newDirectionTime;
+    private float newDirectionRate = 1.5f;
 
 
     // Use this for initialization
@@ -33,9 +35,20 @@ public class Enemy_2 : MonoBehaviour {
     }
 
     private void Movement() {
+        if (Time.time > newDirectionTime) {
+            int number = Random.Range(1, 4);
+            if (number == 1) 
+                transform.position += Time.deltaTime * moveSpeed * transform.right;
+            if (number == 2)
+                transform.position += Time.deltaTime * moveSpeed * -transform.right;
+            if (number == 3)
+                transform.position += Time.deltaTime * moveSpeed * transform.up;
+            if (number == 4)
+                transform.position += Time.deltaTime * moveSpeed * -transform.up;
+            newDirectionTime = Time.time + newDirectionRate;
+        }
 
     }
-
 
     public void takeDamage(float damage) {
         health -= damage;
