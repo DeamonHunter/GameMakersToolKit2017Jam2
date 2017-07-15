@@ -13,8 +13,10 @@ public class Enemy_2 : EnemyBase {
 
     // Update is called once per frame
     protected override void Update() {
-        Shoot();
-        Movement();
+        if (Activated) {
+            Shoot();
+            Movement();
+        }
     }
 
     private void Shoot() {

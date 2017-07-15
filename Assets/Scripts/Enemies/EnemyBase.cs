@@ -11,6 +11,7 @@ public abstract class EnemyBase : MonoBehaviour {
     public float health = 1.0f;
     public float damage = 1.0f;
     public float damageRate = 0.2f;
+    public bool Activated;
     private float damageTime;
     private float killTime;
     private float killRate = 0.1f;
@@ -19,7 +20,7 @@ public abstract class EnemyBase : MonoBehaviour {
     // Use this for initialization
     void Start() {
         Player = GameObject.FindGameObjectWithTag("Player");
-        
+        Activated = false;
     }
 
     // Update is called once per frame
@@ -43,5 +44,9 @@ public abstract class EnemyBase : MonoBehaviour {
             other.transform.GetComponent<PlayerController>().TakeDamage(damage);
             damageTime = Time.time + damageRate;
         }
+    }
+
+    public void ActivateEnemy() {
+        Activated = true;
     }
 }
