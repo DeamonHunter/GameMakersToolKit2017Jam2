@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     private List<int> weaponsPurchased = new List<int>();
     private GameObject curWeapon;
     public ChargeBarScript ChargeBar;
+    public ShopMessageScript shopMessage;
 
     public float MaxHealth;
     public float MaxStamina;
@@ -132,14 +133,28 @@ public class PlayerController : MonoBehaviour {
             if (!weaponsPurchased.Contains(weaponID)) {
                 weaponsPurchased.Add(weaponID);
                 gemCount -= weaponPrice;
+                shopMessage.gameObject.SetActive(true);
+                switch (weaponID) {
+                    case 0:
+                        shopMessage.Showtext("You have bought the Broadsword!");
+                        break;
+                    case 1:
+                        shopMessage.Showtext("You have bought the Spear!");
+                        break;
+                    case 2:
+                        shopMessage.Showtext("You have bought the Double Pistols!");
+                        break;
+                }
                 return true;
             }
             else {
-                //Another error message
+                shopMessage.gameObject.SetActive(true);
+                shopMessage.Showtext("Already unlocked this item!");
             }
         }
         else {
-            //Give error message
+            shopMessage.gameObject.SetActive(true);
+            shopMessage.Showtext("Don't have enough gems to unlock this item!");
         }
         return false;
     }
@@ -159,8 +174,12 @@ public class PlayerController : MonoBehaviour {
             if (curHealth > MaxHealth)
                 MaxHealth = curHealth;
             gemCount -= Cost;
+            shopMessage.gameObject.SetActive(true);
+            shopMessage.Showtext("Have just bought " + health + " hp!");
             return true;
         }
+        shopMessage.gameObject.SetActive(true);
+        shopMessage.Showtext("Don't have enough gems to heal!");
         return false;
     }
 
@@ -168,8 +187,12 @@ public class PlayerController : MonoBehaviour {
         if (gemCount >= Cost) {
             MaxStamina += stamina;
             gemCount -= Cost;
+            shopMessage.gameObject.SetActive(true);
+            shopMessage.Showtext("Have just bought " + stamina + " max stamina!");
             return true;
         }
+        shopMessage.gameObject.SetActive(true);
+        shopMessage.Showtext("Don't have enough gems to buy stamina!");
         return false;
     }
 
