@@ -18,7 +18,7 @@ public class HealthUpgrade : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        Instantiate(gemSprite, transform.position + new Vector3(-3.5f, -7f, 0f), transform.rotation, transform);
+        Instantiate(gemSprite, transform.position + new Vector3(-2.5f, -5.2f, 0f), transform.rotation, transform);
         instancedBlock = Instantiate(UnlockedSprite, transform.position + new Vector3(0, 0, -0.01f), transform.rotation, transform);
         text = GetComponentInChildren<TextMesh>();
     }

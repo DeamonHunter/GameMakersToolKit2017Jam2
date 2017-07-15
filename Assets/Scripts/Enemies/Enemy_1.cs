@@ -9,7 +9,7 @@ public class Enemy_1 : EnemyBase {
     }
 
     private void Movement() {
-        if (Activated && GameManager.instance.player) {
+        if (Activated && GameManager.instance.player != null) {
             transform.position = Vector2.MoveTowards(transform.position, GameManager.instance.player.transform.position, moveSpeed *
             Time.deltaTime);
         }
