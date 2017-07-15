@@ -8,14 +8,16 @@ public class LevelController : MonoBehaviour {
     public Transform[] LevelCentres;
     public GameObject[] LevelDesigns;
     public GameObject[] Enemies;
+    public Vector2 RoomSize;
 
     public bool LevelDone;
     public bool DoorClosed;
 
-
+    private int waveCount;
     private SwitchScript switchScript;
     private List<GameObject> SpawnedEnemies;
     private int CurrentDoor;
+    private GameObject currentDesign;
 
     // Use this for initialization
     void Start() {
@@ -35,8 +37,11 @@ public class LevelController : MonoBehaviour {
         if (SpawnedEnemies.Count == 0) {
             CurrentDoor = Random.Range(0, 3);
             Doors[CurrentDoor].DoorOpen = true;
-            Instantiate(Enemies[0], LevelCentres[CurrentDoor].position, Quaternion.identity);
-
+            for (int i = 0; i <= waveCount; i++) {
+                Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
+                Instantiate(Enemies[0], LevelCentres[CurrentDoor].position + rand, Quaternion.identity);
+            }
+            currentDesign = Instantiate(LevelDesigns[Random.Range(0, LevelDesigns.Length)], LevelCentres[CurrentDoor].position, Quaternion.identity);
             LevelDone = false;
             DoorClosed = false;
         }
@@ -56,10 +61,15 @@ public class LevelController : MonoBehaviour {
         LevelDone = true;
         DoorClosed = false;
         switchScript.LeverHit = false;
+        waveCount++;
     }
 
     public void CloseDoor() {
         Doors[CurrentDoor].DoorOpen = false;
         DoorClosed = true;
+    }
+
+    public void DestroyDesign() {
+        Destroy(currentDesign);
     }
 }

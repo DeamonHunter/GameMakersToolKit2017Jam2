@@ -7,7 +7,9 @@ public class LevelFinisher : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player")
-            if (LevelController.LevelDone && !LevelController.DoorClosed)
+            if (LevelController.LevelDone && !LevelController.DoorClosed) {
                 LevelController.CloseDoor();
+                LevelController.DestroyDesign();
+            }
     }
 }
