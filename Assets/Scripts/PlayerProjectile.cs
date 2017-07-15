@@ -44,8 +44,20 @@ public class PlayerProjectile : MonoBehaviour {
         }
         else if (other.tag == "Switch")
             other.GetComponent<SwitchScript>().HitLever();
+        else if (other.tag == "Shop") {
+            if (Vector3.Distance(player.transform.position, other.transform.position) < 20) {
+                var weapon = other.GetComponent<WeaponBuyScript>();
+                if (weapon != null && !weapon.Purchased) {
+
+                    weapon.Purchased = player.UnlockWeapon(weapon.WeaponNumber, weapon.GemCount);
+                }
+
+            }
+            else {
+                //Have some error message show. Stops pistols from buying
+            }
+        }
         else if (other.tag != "Trigger" && other.tag != "Player")
             Destroy(gameObject);
-
     }
 }
