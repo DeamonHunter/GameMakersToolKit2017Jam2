@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour {
     public float maxComboTime = 21.0f;
     public float comboTimeRemaining;
     int timeToAdd;
+    public Text gameOverText;
+    
 
     void Awake() {
 
@@ -20,6 +23,8 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
 
         comboTimeRemaining = 0;
+        gameOverText.text = "GAME OVER";
+        gameOverText.enabled = false;
     }
 
     private void Update() {
@@ -35,7 +40,9 @@ public class GameManager : MonoBehaviour {
         }
 
         if (PlayerController.playerDead) {
-            Invoke("RestartGame", 2);
+            Invoke("RestartGame", 3);
+            gameOverText.enabled = true;
+
         }
     }
 
