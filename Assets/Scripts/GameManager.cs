@@ -7,11 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
     public GameObject player;
-    private float maxComboTime = 3.0f;
-    public float currentCombo;
-    public float maxCombo;
-    public float enemyDeathTime;
-    public bool newEnemyDeath;
+    public float maxComboTime = 21.0f;
     public float comboTimeRemaining;
     int timeToAdd;
 
@@ -23,10 +19,6 @@ public class GameManager : MonoBehaviour {
         else if (instance != this)
             Destroy(gameObject);
 
-        currentCombo = 0;
-        maxCombo = 10;
-        enemyDeathTime = -3242094309823;
-        newEnemyDeath = true;
         comboTimeRemaining = 0;
     }
 
@@ -34,9 +26,12 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
             SceneManager.LoadScene(0);
 
-        comboTimeRemaining -= Time.deltaTime;
-        if (comboTimeRemaining <= 0) {
-            currentCombo = 0;
+        if (comboTimeRemaining > 21.0f) {
+            comboTimeRemaining = 21.0f;
+        } else if (comboTimeRemaining > 0) {
+            comboTimeRemaining -= Time.deltaTime;
+        } else if (comboTimeRemaining <= 0) {
+            comboTimeRemaining = 0;
         }
     }
 
@@ -44,16 +39,4 @@ public class GameManager : MonoBehaviour {
         comboTimeRemaining += 3.0f;
 
     }
-
-   // public void Streak() {
-     //   if (comboTimeRemaining <= 0) {
-       //     currentCombo = 0;
-
-        //} else if (newEnemyDeath && Time.time <= enemyDeathTime + maxComboTime && currentCombo <= maxCombo) {
-         //   currentCombo += 1;
-          //  maxComboTime += 3.0f;
-         //   newEnemyDeath = false;
-       // }
-
-   // }
 }

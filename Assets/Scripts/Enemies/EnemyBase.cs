@@ -29,7 +29,7 @@ public abstract class EnemyBase : MonoBehaviour {
     public virtual void TakeDamage(float damage) {
         health -= damage;
         if (health <= 0 && Time.time > killTime) {
-            for (int i = 0; i < GameManager.instance.currentCombo; i++) {
+            for (int i = 0; i < GameManager.instance.comboTimeRemaining / GameManager.instance.maxComboTime; i++) {
                 for (int j = 0; j < 1; j++) {
                     int xGem = Random.Range(1, 4);
                     int yGem = Random.Range(1, 4);
@@ -39,9 +39,7 @@ public abstract class EnemyBase : MonoBehaviour {
             }
             Instantiate(deathEffect, transform.position, transform.rotation);
             //records the current enemy death time
-            GameManager.instance.enemyDeathTime = Time.time;
             GameManager.instance.ComboTracker(3.0f);
-            //GameManager.instance.newEnemyDeath = true;
             killTime = Time.time + killRate;
             Destroy(this.gameObject);
         }
