@@ -12,6 +12,7 @@ public class PlayerProjectile : MonoBehaviour {
 
     private PlayerController player;
     private Rigidbody2D rb;
+    public GameObject gem;
 
     // Use this for initialization
     void Start() {
@@ -39,6 +40,13 @@ public class PlayerProjectile : MonoBehaviour {
             player.CurStamina += staminaGain;
         }
         else if (other.tag == "Crate") {
+            for (int j = 0; j < 7; j++) {
+                int xGem = Random.Range(1, 4);
+                int yGem = Random.Range(1, 4);
+                Vector3 gemSpawn = new Vector3(xGem, yGem);
+                Instantiate(gem, transform.position + gemSpawn, transform.rotation);
+            }
+            GameManager.instance.ComboTracker(3.0f);
             Destroy(other.gameObject);
             player.RandomWeapon();
         }

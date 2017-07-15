@@ -6,6 +6,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     public Vector2 StartOffset;
     public float StartRotation;
     public PlayerController Player;
+    public GameObject gem;
     public float AttackForce;
     public float AttackTimeout;
 
@@ -19,8 +20,6 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     protected bool _attacking;
     protected float _lastAttack;
 
-    //private float damageTime;
-    //private float damageRate = 0.1f;
     private float damage = 1.0f;
 
 
@@ -48,6 +47,13 @@ public abstract class BaseWeaponScript : MonoBehaviour {
             Player.CurStamina += StaminaGainFromEnemy;
         }
         else if (other.tag == "Crate") {
+            for (int j = 0; j < 7; j++) {
+                int xGem = Random.Range(1, 4);
+                int yGem = Random.Range(1, 4);
+                Vector3 gemSpawn = new Vector3(xGem, yGem);
+                Instantiate(gem, transform.position + gemSpawn, transform.rotation);
+            }
+            GameManager.instance.ComboTracker(3.0f);
             Destroy(other.gameObject);
             Player.RandomWeapon();
 

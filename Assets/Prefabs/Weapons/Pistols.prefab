@@ -131,9 +131,12 @@ MonoBehaviour:
   StartOffset: {x: 0, y: 4}
   StartRotation: 0
   Player: {fileID: 0}
+  gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
   AttackForce: -20
   AttackTimeout: 0.1
-  UseHeat: 0
+  Charger: 0
+  TimeToCharge: 0
+  chargePercentage: 0
   staminaUse: 5
   StaminaGainFromEnemy: 10
   Bullet: {fileID: 1933032574887044, guid: dd2e3385e4691414898c2ecd88b04a97, type: 2}
