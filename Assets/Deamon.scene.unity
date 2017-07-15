@@ -2267,9 +2267,11 @@ MonoBehaviour:
   - {fileID: 275914063}
   - {fileID: 1725310724}
   - {fileID: 1895471853}
-  LevelDesigns: []
+  LevelDesigns:
+  - {fileID: 1170767714192894, guid: d675e97b891f9c0469a638dab1119f4e, type: 2}
   Enemies:
   - {fileID: 1943135694972620, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
+  RoomSize: {x: 25, y: 25}
   LevelDone: 0
   DoorClosed: 0
 --- !u!1 &950193935
@@ -4012,6 +4014,7 @@ MonoBehaviour:
   StaminaCooldownPeriod: 0.66
   curHealth: 0
   gemCount: 0
+  Weapons: 
 --- !u!58 &1490109897
 CircleCollider2D:
   m_ObjectHideFlags: 0
