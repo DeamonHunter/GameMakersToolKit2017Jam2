@@ -54,8 +54,5 @@ public abstract class BaseWeaponScript : MonoBehaviour {
             other.GetComponent<SwitchScript>().HitLever();
         }
 
-        else if (other.tag == "Gems") {
-
-        }
     }
 }

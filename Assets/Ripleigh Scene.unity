@@ -1123,7 +1123,6 @@ GameObject:
   - component: {fileID: 500649356}
   - component: {fileID: 500649359}
   - component: {fileID: 500649358}
-  - component: {fileID: 500649357}
   m_Layer: 0
   m_Name: BSUpgrade
   m_TagString: Untagged
@@ -1144,18 +1143,6 @@ Transform:
   m_Father: {fileID: 415954842}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &500649357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 500649355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58c2d09e49f433a4188e44014697387f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pc: {fileID: 0}
 --- !u!61 &500649358
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2566,6 +2553,7 @@ MonoBehaviour:
   ChooseableWeapons:
   - {fileID: 1648814176952074, guid: 78e99e84698dc2944bea9c903a0241d8, type: 2}
   - {fileID: 1328188826959918, guid: de43f13227ccc404796e3aa1f55e21eb, type: 2}
+  - {fileID: 1664259779430050, guid: b579112c16cfca540b45c913d0c5cd6f, type: 2}
   MaxHealth: 5
   MaxStamina: 100
   Speed: 200
