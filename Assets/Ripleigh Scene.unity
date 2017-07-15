@@ -877,7 +877,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15.9
+      value: -17.01
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1747,11 +1747,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.63
+      value: -15.87
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15.9
+      value: 10.03
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1887,7 +1887,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15.9
+      value: -9.95
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2035,6 +2035,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dbccd92cfa73584e9ac8ff0d64018d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GemCount: 0
+  Amount: 0
+  gemSprite: {fileID: 0}
+  UnlockedSprite: {fileID: 0}
 --- !u!61 &1106510427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2155,11 +2159,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.77
+      value: 16.68
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15.9
+      value: 4.17
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2899,11 +2903,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.8900003
+      value: -12.11
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15.9
+      value: -7.86
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3133,9 +3137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3799acaf00ffd14f97392cd61b934e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pc: {fileID: 1490109896}
-  upgradeEffect: {fileID: 1904989213234394, guid: 3ee3ff0460f10124b9342f0e88c5c836,
-    type: 2}
+  GemCount: 0
+  Amount: 0
+  gemSprite: {fileID: 0}
+  UnlockedSprite: {fileID: 0}
 --- !u!61 &1810138549
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3241,7 +3246,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15.9
+      value: -2.19
       objectReference: {fileID: 0}
     - target: {fileID: 4344005200996956, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
       propertyPath: m_LocalPosition.z

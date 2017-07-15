@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
     public GameObject player;
     private float maxComboTime = 3.0f;
-    public int currentCombo;
+    public float currentCombo;
+    public float maxCombo;
     public float enemyDeathTime;
     public bool newEnemyDeath;
 
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
 
         currentCombo = 0;
+        maxCombo = 10;
         enemyDeathTime = -3242094309823;
         newEnemyDeath = true;
     }
@@ -36,7 +38,7 @@ public class GameManager : MonoBehaviour {
         if (Time.time > enemyDeathTime + maxComboTime) {
             currentCombo = 0;
 
-        } else if (newEnemyDeath && Time.time <= enemyDeathTime + maxComboTime) {
+        } else if (newEnemyDeath && Time.time <= enemyDeathTime + maxComboTime && currentCombo <= maxCombo) {
             currentCombo += 1;
             newEnemyDeath = false;
         }
