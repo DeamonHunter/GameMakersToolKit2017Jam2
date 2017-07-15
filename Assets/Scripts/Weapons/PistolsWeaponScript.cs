@@ -20,6 +20,7 @@ public class PistolsWeaponScript : BaseWeaponScript {
             GetComponent<Animation>().Play("PistolRightAttack");
             var bullet = Instantiate(Bullet, GunRight.transform.position, GunRight.transform.rotation).GetComponent<PlayerProjectile>();
             bullet.MoveDirection = new Vector2(pos.x, pos.y).normalized;
+            bullet.transform.position += new Vector3(bullet.MoveDirection.x, bullet.MoveDirection.y) * 2;
             bullet.staminaGain = StaminaGainFromEnemy;
             LeftSideAttacked = false;
         }
@@ -28,6 +29,7 @@ public class PistolsWeaponScript : BaseWeaponScript {
             GetComponent<Animation>().Play("PistolLeftAttack");
             var bullet = Instantiate(Bullet, GunLeft.transform.position, GunLeft.transform.rotation).GetComponent<PlayerProjectile>();
             bullet.MoveDirection = new Vector2(pos.x, pos.y).normalized;
+            bullet.transform.position += new Vector3(bullet.MoveDirection.x, bullet.MoveDirection.y) * 2;
             bullet.staminaGain = StaminaGainFromEnemy;
             LeftSideAttacked = true;
         }

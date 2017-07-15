@@ -33,6 +33,7 @@ public class ShottyWeaponScript : BaseWeaponScript {
         var bulletDirection = direction + Random.Range(-Spread, Spread);
 
         bullet.MoveDirection = new Vector2(Mathf.Cos(bulletDirection * Mathf.Deg2Rad), Mathf.Sin(bulletDirection * Mathf.Deg2Rad)).normalized;
+        bullet.transform.position += new Vector3(bullet.MoveDirection.x, bullet.MoveDirection.y) * 2;
         bullet.staminaGain = StaminaGainFromEnemy;
 
     }
