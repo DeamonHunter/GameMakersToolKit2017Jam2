@@ -3,25 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthUpgrade : MonoBehaviour {
+    public int GemCount;
+    public int Amount;
+    public GameObject gemSprite;
+    public GameObject UnlockedSprite;
 
-    public PlayerController pc;
-    public GameObject upgradeEffect;
+    public bool Purchasable {
+        get { return Time.time > timeLock; }
+    }
+
+    private TextMesh text;
+    private GameObject instancedBlock;
+    private float timeLock;
 
     // Use this for initialization
     void Start() {
-        //pc.GetComponent<PlayerController>();
+        Instantiate(gemSprite, transform.position + new Vector3(-2, -3.5f, -0.02f), transform.rotation, transform);
+        instancedBlock = Instantiate(UnlockedSprite, transform.position + new Vector3(0, 0, -0.03f), transform.rotation, transform);
+        text = GetComponentInChildren<TextMesh>();
+        text.text = GemCount.ToString();
     }
 
-    // Update is called once per frame
     void Update() {
-
+        text.text = GemCount.ToString();
+        if (Time.time < timeLock)
+            instancedBlock.SetActive(true);
+        else
+            instancedBlock.SetActive(false);
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        if (other.transform.tag == "Player") {
-            pc.MaxHealth += 1;
-            Instantiate(upgradeEffect, transform.position, transform.rotation);
-            Destroy(this.gameObject);
-        }
+    public void Purchased() {
+        GemCount += 5;
+        timeLock = Time.time + 1;
     }
+
 }
