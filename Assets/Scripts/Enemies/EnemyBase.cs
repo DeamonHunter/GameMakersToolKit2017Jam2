@@ -29,10 +29,14 @@ public abstract class EnemyBase : MonoBehaviour {
     public virtual void TakeDamage(float damage) {
         health -= damage;
         if (health <= 0 && Time.time > killTime) {
-            int xGem = Random.Range(1, 4);
-            int yGem = Random.Range(1, 4);
-            Vector3 gemSpawn = new Vector3(xGem, yGem);
-            Instantiate(gem, transform.position + gemSpawn, transform.rotation);
+            for (int i = 0; i < GameManager.instance.currentCombo; i++) {
+                for (int j = 0; j < 1; j++) {
+                    int xGem = Random.Range(1, 4);
+                    int yGem = Random.Range(1, 4);
+                    Vector3 gemSpawn = new Vector3(xGem, yGem);
+                    Instantiate(gem, transform.position + gemSpawn, transform.rotation);
+                }
+            }
             Instantiate(deathEffect, transform.position, transform.rotation);
             //records the current enemy death time
             GameManager.instance.enemyDeathTime = Time.time;
