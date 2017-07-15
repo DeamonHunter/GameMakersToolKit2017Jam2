@@ -21,7 +21,6 @@ public class HealthUpgrade : MonoBehaviour {
         Instantiate(gemSprite, transform.position + new Vector3(-2, -3.5f, -0.02f), transform.rotation, transform);
         instancedBlock = Instantiate(UnlockedSprite, transform.position + new Vector3(0, 0, -0.03f), transform.rotation, transform);
         text = GetComponentInChildren<TextMesh>();
-        text.text = GemCount.ToString();
     }
 
     void Update() {

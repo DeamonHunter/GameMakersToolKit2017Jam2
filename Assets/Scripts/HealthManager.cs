@@ -17,6 +17,6 @@ public class HealthManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         HealthBar.sizeDelta = new Vector2(pc.curHealth / pc.MaxHealth * 200, 30);
-        bar.localScale = new Vector3(Mathf.Log(pc.MaxHealth / 10 + 1), 1, 1);
+        bar.localScale = new Vector3(Mathf.Log(pc.MaxHealth / 10 + 1.6f), 1, 1);
     }
 }
