@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb;
     private BaseWeaponScript weapon;
     public Vector3 HalfScreenSize;
-    public Slider slider;
 
     public GameObject[] ChooseableWeapons;
     private GameObject curWeapon;
@@ -53,7 +52,6 @@ public class PlayerController : MonoBehaviour {
     void Update() {
         Movement();
         //Debug.Log(curStamina);
-        slider.value = curStamina / MaxStamina;
         var pos = Input.mousePosition - HalfScreenSize;
         var angle = Mathf.Atan2(pos.y, pos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
@@ -63,7 +61,7 @@ public class PlayerController : MonoBehaviour {
 
         RegainStamina();
 
-        
+
     }
 
     private void Movement() {
@@ -107,7 +105,7 @@ public class PlayerController : MonoBehaviour {
             gemCount += 1;
             gemCollectTime = Time.time + gemCollectRate;
             Destroy(other.gameObject);
-            
+
         }
     }
 
