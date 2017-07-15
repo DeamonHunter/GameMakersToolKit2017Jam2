@@ -6004,6 +6004,7 @@ MonoBehaviour:
   - {fileID: 1301989898268688, guid: 9eb67ee3bc60c8d4fbb3c57591ddd6e8, type: 2}
   - {fileID: 1935496681584110, guid: aad410ed83feb0b4981167c4cabf8782, type: 2}
   - {fileID: 1347808113255256, guid: 6aa00cdd5a18b1448a0bb08bbde6a101, type: 2}
+  - {fileID: 1150868856715622, guid: dbe48c2af795cd943a0b715ace339947, type: 2}
   ChargeBar: {fileID: 2092519339}
   shopMessage: {fileID: 1135238705}
   MaxHealth: 5
