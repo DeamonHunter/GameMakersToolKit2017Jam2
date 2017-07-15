@@ -4476,10 +4476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1490109892}
-  currentCombo: 0
-  maxCombo: 0
-  enemyDeathTime: 0
-  newEnemyDeath: 0
+  maxComboTime: 21
   comboTimeRemaining: 0
 --- !u!4 &1129344875
 Transform:
@@ -6004,6 +6001,7 @@ MonoBehaviour:
   - {fileID: 1328188826959918, guid: de43f13227ccc404796e3aa1f55e21eb, type: 2}
   - {fileID: 1664259779430050, guid: b579112c16cfca540b45c913d0c5cd6f, type: 2}
   - {fileID: 1512071295217790, guid: db5991e7b0ca8714587de057e740ed3a, type: 2}
+  - {fileID: 1301989898268688, guid: 9eb67ee3bc60c8d4fbb3c57591ddd6e8, type: 2}
   ChargeBar: {fileID: 2092519339}
   shopMessage: {fileID: 1135238705}
   MaxHealth: 5
