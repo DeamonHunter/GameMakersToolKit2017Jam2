@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4664971050580390}
   - component: {fileID: 212928347024196994}
-  - component: {fileID: 114063831597701358}
+  - component: {fileID: 114386470035880480}
   - component: {fileID: 61813241231576716}
   - component: {fileID: 111033992138477740}
   m_Layer: 0
@@ -83,7 +83,7 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &114063831597701358
+--- !u!114 &114386470035880480
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -91,19 +91,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1512071295217790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58cdcf777d1b7694ab0c9b100f87058f, type: 3}
+  m_Script: {fileID: 11500000, guid: 55188f2e52d623e45a746f17ca3f17e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   StartOffset: {x: 6, y: 3}
   StartRotation: 0
   Player: {fileID: 0}
-  AttackForce: -80
+  AttackForce: -110
   AttackTimeout: 0.8
   Charger: 0
   TimeToCharge: 0
   chargePercentage: 0
   staminaUse: 45
   StaminaGainFromEnemy: 10
+  Bullet: {fileID: 1933032574887044, guid: dd2e3385e4691414898c2ecd88b04a97, type: 2}
+  NumberOfBullets: 12
+  Spread: 20
+  MaxDelay: 0.1
 --- !u!212 &212928347024196994
 SpriteRenderer:
   m_ObjectHideFlags: 1

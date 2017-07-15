@@ -3882,6 +3882,7 @@ MonoBehaviour:
   Enemies:
   - {fileID: 1943135694972620, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
   RoomSize: {x: 25, y: 25}
+  Arrow: {fileID: 0}
   LevelDone: 0
   DoorClosed: 0
 --- !u!1 &950193935
@@ -4612,10 +4613,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1490109892}
-  currentCombo: 0
-  maxCombo: 0
-  enemyDeathTime: 0
-  newEnemyDeath: 0
+  maxComboTime: 21
+  comboTimeRemaining: 0
 --- !u!4 &1129344875
 Transform:
   m_ObjectHideFlags: 0
@@ -6036,7 +6035,9 @@ MonoBehaviour:
   - {fileID: 1648814176952074, guid: 78e99e84698dc2944bea9c903a0241d8, type: 2}
   - {fileID: 1328188826959918, guid: de43f13227ccc404796e3aa1f55e21eb, type: 2}
   - {fileID: 1664259779430050, guid: b579112c16cfca540b45c913d0c5cd6f, type: 2}
+  - {fileID: 1512071295217790, guid: db5991e7b0ca8714587de057e740ed3a, type: 2}
   ChargeBar: {fileID: 2092519339}
+  shopMessage: {fileID: 0}
   MaxHealth: 5
   MaxStamina: 100
   Speed: 200
