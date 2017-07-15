@@ -6,7 +6,6 @@ public abstract class EnemyBase : MonoBehaviour {
     protected GameObject Player;
     public GameObject gem;
     public GameObject deathEffect;
-    public GameManager gm;
 
     public float moveSpeed = 5.0f;
     public float health = 1.0f;
@@ -21,7 +20,6 @@ public abstract class EnemyBase : MonoBehaviour {
     // Use this for initialization
     void Start() {
         Player = GameObject.FindGameObjectWithTag("Player");
-        gm.GetComponent<GameManager>();
         Activated = false;
     }
 
@@ -37,10 +35,10 @@ public abstract class EnemyBase : MonoBehaviour {
             Instantiate(gem, transform.position + gemSpawn, transform.rotation);
             Instantiate(deathEffect, transform.position, transform.rotation);
             //records the current enemy death time
-            gm.enemyDeathTime = Time.time;
-            gm.newEnemyDeath = true;
+            GameManager.instance.enemyDeathTime = Time.time;
+            GameManager.instance.newEnemyDeath = true;
             killTime = Time.time + killRate;
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 

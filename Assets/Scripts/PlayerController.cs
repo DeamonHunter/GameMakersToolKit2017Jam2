@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour {
         curStamina = MaxStamina;
         curHealth = MaxHealth;
         HalfScreenSize = new Vector3(Screen.width, Screen.height) / 2;
-        gemCount = 0;
+        gemCount = 100;
 
     }
 
