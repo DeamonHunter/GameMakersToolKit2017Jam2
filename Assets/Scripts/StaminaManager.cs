@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthManager : MonoBehaviour {
+public class StaminaManager : MonoBehaviour {
     private PlayerController pc;
-    public RectTransform HealthBar;
+    public RectTransform StaminaBar;
     private RectTransform bar;
 
     // Use this for initialization
@@ -16,7 +16,7 @@ public class HealthManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        HealthBar.sizeDelta = new Vector2(pc.curHealth / pc.MaxHealth * 200, 30);
-        bar.localScale = new Vector3(pc.MaxHealth / 10, 1, 1);
+        StaminaBar.sizeDelta = new Vector2(pc.CurStamina / pc.MaxStamina * 150, 30);
+        //bar.localScale = new Vector3(pc.MaxHealth / 10, 1, 1);
     }
 }
