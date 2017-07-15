@@ -4480,6 +4480,7 @@ MonoBehaviour:
   maxCombo: 0
   enemyDeathTime: 0
   newEnemyDeath: 0
+  comboTimeRemaining: 0
 --- !u!4 &1129344875
 Transform:
   m_ObjectHideFlags: 0
