@@ -35,7 +35,8 @@ public class LevelController : MonoBehaviour {
         if (SpawnedEnemies.Count == 0) {
             CurrentDoor = Random.Range(0, 3);
             Doors[CurrentDoor].DoorOpen = true;
-            SpawnedEnemies.Add(Instantiate(Enemies[0], Vector3.zero, Quaternion.identity));
+            Instantiate(Enemies[0], LevelCentres[CurrentDoor].position, Quaternion.identity);
+
             LevelDone = false;
             DoorClosed = false;
         }
