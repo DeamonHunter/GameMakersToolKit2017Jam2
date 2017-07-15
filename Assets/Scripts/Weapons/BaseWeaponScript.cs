@@ -39,7 +39,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     public abstract float Attack();
 
     void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Entered");
+        //Debug.Log("Entered");
         var enemy = other.gameObject.GetComponent<EnemyBase>();
         if (enemy != null) {
             other.transform.GetComponent<EnemyBase>().TakeDamage(damage);
@@ -50,9 +50,12 @@ public abstract class BaseWeaponScript : MonoBehaviour {
             Player.RandomWeapon();
 
         }
+        else if (other.tag == "Switch") {
+            other.GetComponent<SwitchScript>().HitLever();
+        }
 
         else if (other.tag == "Gems") {
-            
+
         }
     }
 }

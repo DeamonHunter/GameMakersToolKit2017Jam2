@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 212447242338801804}
   m_Layer: 0
   m_Name: Enemy_2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   health: 2
   damage: 1
   damageRate: 0.2
+  Activated: 0
   enemyProjectile: {fileID: 1933032574887044, guid: 3fdc5c83c62968d44835d9274cab847d,
     type: 2}
   enemyFireRate: 1
