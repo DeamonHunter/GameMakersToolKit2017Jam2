@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour {
 
     public int gemCount;
     private bool charging;
+    public bool Invunerable;
 
     public bool[] Weapons;
 
@@ -116,6 +117,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void TakeDamage(float damage) {
+        if (Invunerable)
+            return;
         curHealth -= damage;
         if (curHealth <= 0) {
             playerDead = true;

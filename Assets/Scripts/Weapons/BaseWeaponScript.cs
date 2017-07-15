@@ -11,6 +11,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     public float AttackTimeout;
 
     public bool Charger; //When using guns
+    public bool Invunerable;
     public float TimeToCharge;
     public float chargePercentage;
 
@@ -96,5 +97,4 @@ public abstract class BaseWeaponScript : MonoBehaviour {
         if (chargePercentage > 1)
             chargePercentage = 1;
     }
-
 }
