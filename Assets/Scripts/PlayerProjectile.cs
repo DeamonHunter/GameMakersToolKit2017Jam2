@@ -70,7 +70,9 @@ public class PlayerProjectile : MonoBehaviour {
             player.gemCount++;
             Destroy(other.gameObject);
         }
-        else if (other.tag != "Trigger" && other.tag != "Player")
-            Destroy(gameObject);
+        else if (other.tag != "Trigger" && other.tag != "Player") {
+            if (other.GetComponent<PlayerProjectile>() == null)
+                Destroy(gameObject);
+        }
     }
 }
