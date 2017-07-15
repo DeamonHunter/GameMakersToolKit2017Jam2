@@ -35,14 +35,18 @@ public class PlayerController : MonoBehaviour {
     private float gemCollectTime;
     private float gemCollectRate = 0.1f;
 
+    public bool[] Weapons;
+
     // Use this for initialization
     void Start() {
         rb = GetComponent<Rigidbody2D>();
+        Weapons = new bool[] { false, false, false, false, false, false };
         RandomWeapon();
         curStamina = MaxStamina;
         curHealth = MaxHealth;
         HalfScreenSize = new Vector3(Screen.width, Screen.height) / 2;
         gemCount = 0;
+
     }
 
     // Update is called once per frame

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212607650916162738}
   - component: {fileID: 60249989669568022}
   - component: {fileID: 50473624245992084}
-  - component: {fileID: 114219858511004486}
+  - component: {fileID: 114110871123093162}
   m_Layer: 0
   m_Name: greenGem
   m_TagString: Gems
@@ -55,7 +55,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -100,7 +100,7 @@ PolygonCollider2D:
       - {x: 0.11, y: -0.38}
       - {x: 0.48, y: 0.13}
       - {x: 0.48, y: 0.17}
---- !u!114 &114219858511004486
+--- !u!114 &114110871123093162
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -108,10 +108,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1789459229555730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbe08f129ffe0ff40a13f052f41a167d, type: 3}
+  m_Script: {fileID: 11500000, guid: 207f30fba3cb5b74dbb4d44b0ed65691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pc: {fileID: 0}
 --- !u!212 &212607650916162738
 SpriteRenderer:
   m_ObjectHideFlags: 1

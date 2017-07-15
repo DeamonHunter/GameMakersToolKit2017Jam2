@@ -12,6 +12,8 @@ public abstract class EnemyBase : MonoBehaviour {
     public float damage = 1.0f;
     public float damageRate = 0.2f;
     private float damageTime;
+    private float killTime;
+    private float killRate = 0.1f;
 
 
     // Use this for initialization
@@ -25,13 +27,14 @@ public abstract class EnemyBase : MonoBehaviour {
 
     public virtual void TakeDamage(float damage) {
         health -= damage;
-        if (health <= 0) {
-            int xGem = Random.Range(2, 5);
-            int yGem = Random.Range(2, 5);
+        if (health <= 0 && Time.time > killTime) {
+            int xGem = Random.Range(1, 4);
+            int yGem = Random.Range(1, 4);
             Vector3 gemSpawn = new Vector3(xGem, yGem);
             Instantiate(gem, transform.position + gemSpawn, transform.rotation);
             Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(gameObject);
+            killTime = Time.time + killRate;
         }
     }
 
