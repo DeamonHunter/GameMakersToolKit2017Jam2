@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-        weaponsPurchased.Add(7);
+        weaponsPurchased.Add(8);
         RandomWeapon();
         curStamina = MaxStamina;
         curHealth = MaxHealth;
