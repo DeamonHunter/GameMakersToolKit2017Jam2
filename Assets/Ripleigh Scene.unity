@@ -2879,6 +2879,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pc: {fileID: 1490109896}
+  upgradeEffect: {fileID: 1904989213234394, guid: 3ee3ff0460f10124b9342f0e88c5c836,
+    type: 2}
 --- !u!61 &1810138549
 BoxCollider2D:
   m_ObjectHideFlags: 0
