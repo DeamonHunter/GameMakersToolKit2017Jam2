@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour {
         if (curWeapon != null)
             Destroy(curWeapon);
         int rand = Random.Range(0, ChooseableWeapons.Length);
-        curWeapon = Instantiate(ChooseableWeapons[rand], transform.position, transform.rotation, transform);
+        curWeapon = Instantiate(ChooseableWeapons[2], transform.position, transform.rotation, transform);
         weapon = curWeapon.GetComponent<BaseWeaponScript>();
 
     }

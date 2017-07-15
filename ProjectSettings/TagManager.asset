@@ -8,6 +8,7 @@ TagManager:
   - Crate
   - Gems
   - Switch
+  - Trigger
   layers:
   - Default
   - TransparentFX
