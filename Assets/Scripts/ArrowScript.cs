@@ -34,16 +34,16 @@ public class ArrowScript : MonoBehaviour {
         int degrees;
         switch (direction) {
             case 0:
-                degrees = 0;
+                degrees = 90;
                 break;
             case 1:
-                degrees = 180;
+                degrees = 0;
                 break;
             case 2:
                 degrees = -90;
                 break;
             case 3:
-                degrees = 90;
+                degrees = -180;
                 break;
             default:
                 degrees = 0;

@@ -18,8 +18,8 @@ public class StaminaUpgrade : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        Instantiate(gemSprite, transform.position + new Vector3(-2, -3.5f, -0.02f), transform.rotation, transform);
-        instancedBlock = Instantiate(UnlockedSprite, transform.position + new Vector3(0, 0, -0.03f), transform.rotation, transform);
+        Instantiate(gemSprite, transform.position + new Vector3(-3.5f, -7f, 0f), transform.rotation, transform);
+        instancedBlock = Instantiate(UnlockedSprite, transform.position + new Vector3(0, 0, -0.01f), transform.rotation, transform);
         text = GetComponentInChildren<TextMesh>();
     }
 
