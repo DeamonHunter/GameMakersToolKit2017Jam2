@@ -31,6 +31,10 @@ public class PlayerController : MonoBehaviour {
     private float curStamina;
     public float curHealth;
 
+    public int gemCount;
+    private float gemCollectTime;
+    private float gemCollectRate = 0.1f;
+
     // Use this for initialization
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -38,6 +42,7 @@ public class PlayerController : MonoBehaviour {
         curStamina = MaxStamina;
         curHealth = MaxHealth;
         HalfScreenSize = new Vector3(Screen.width, Screen.height) / 2;
+        gemCount = 0;
     }
 
     // Update is called once per frame
@@ -93,5 +98,14 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.transform.tag == "Gems" && Time.time > gemCollectTime) {
+            gemCount += 1;
+            gemCollectTime = Time.time + gemCollectRate;
+            Destroy(other.gameObject);
+            
+        }
+    }
+
+
 }

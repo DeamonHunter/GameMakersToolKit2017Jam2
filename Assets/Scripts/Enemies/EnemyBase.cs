@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour {
     protected GameObject Player;
+    public GameObject gem;
+    public GameObject deathEffect;
 
     public float moveSpeed = 5.0f;
     public float health = 1.0f;
@@ -15,15 +17,18 @@ public abstract class EnemyBase : MonoBehaviour {
     // Use this for initialization
     void Start() {
         Player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     // Update is called once per frame
     protected abstract void Update();
 
-    public virtual void takeDamage(float damage) {
+    public virtual void TakeDamage(float damage) {
         health -= damage;
         if (health <= 0) {
-            Destroy(this.gameObject);
+            Instantiate(gem, transform.position, transform.rotation);
+            Instantiate(deathEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 

@@ -17,6 +17,11 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     protected bool _attacking;
     protected float _lastAttack;
 
+    //private float damageTime;
+    //private float damageRate = 0.1f;
+    private float damage = 1.0f;
+
+
 
     // Use this for initialization
     void Start() {
@@ -37,13 +42,17 @@ public abstract class BaseWeaponScript : MonoBehaviour {
         Debug.Log("Entered");
         var enemy = other.gameObject.GetComponent<EnemyBase>();
         if (enemy != null) {
-            Destroy(other.gameObject);
+            other.transform.GetComponent<EnemyBase>().TakeDamage(damage);
             Player.CurStamina += StaminaGainFromEnemy;
         }
         else if (other.tag == "Crate") {
             Destroy(other.gameObject);
             Player.RandomWeapon();
 
+        }
+
+        else if (other.tag == "Gems") {
+            
         }
     }
 }

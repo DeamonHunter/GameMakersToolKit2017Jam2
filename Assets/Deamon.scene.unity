@@ -3377,6 +3377,7 @@ MonoBehaviour:
   StaminaGainRate: 130
   StaminaCooldownPeriod: 0.66
   curHealth: 0
+  gemCount: 0
 --- !u!58 &1490109897
 CircleCollider2D:
   m_ObjectHideFlags: 0

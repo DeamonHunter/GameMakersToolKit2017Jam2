@@ -84,6 +84,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5baf44004bf051a4b87e10989a96908f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
+  deathEffect: {fileID: 1197638264422824, guid: 276b00f4e23a1114e874d99a9e7b5fca,
+    type: 2}
   moveSpeed: 5
   health: 1
   damage: 1
