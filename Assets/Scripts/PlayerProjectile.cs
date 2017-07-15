@@ -68,7 +68,7 @@ public class PlayerProjectile : MonoBehaviour {
         }
         else if (other.tag == "Gems") {
             player.gemCount++;
-            Destroy(other);
+            Destroy(other.gameObject);
         }
         else if (other.tag != "Trigger" && other.tag != "Player")
             Destroy(gameObject);

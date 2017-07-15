@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 0.5
-  moveSpeed: 0.5
+  moveSpeed: 50
   damage: 2
   staminaGain: 0
   MoveDirection: {x: 0, y: 0}

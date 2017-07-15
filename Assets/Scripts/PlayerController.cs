@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-        weaponsPurchased.Add(0);
+        weaponsPurchased.Add(2);
         RandomWeapon();
         curStamina = MaxStamina;
         curHealth = MaxHealth;
@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
         else {
+            ChargeBar.gameObject.SetActive(false);
             if (Input.GetMouseButton(0) && weapon.staminaUse < CurStamina)
                 CurStamina -= weapon.Attack();
         }
