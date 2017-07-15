@@ -77,6 +77,10 @@ public abstract class BaseWeaponScript : MonoBehaviour {
                 //Have some error message show. Stops pistols from buying
             }
         }
+        else if (other.tag == "Gems") {
+            Player.gemCount++;
+            Destroy(other.gameObject);
+        }
     }
 
     public void IncreaseCharge() {
