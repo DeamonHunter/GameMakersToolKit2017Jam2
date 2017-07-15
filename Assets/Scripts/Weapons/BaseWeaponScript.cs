@@ -56,9 +56,18 @@ public abstract class BaseWeaponScript : MonoBehaviour {
         else if (other.tag == "Shop") {
             if (Vector3.Distance(Player.transform.position, other.transform.position) < 20) {
                 var weapon = other.GetComponent<WeaponBuyScript>();
+                var health = other.GetComponent<HealthUpgrade>();
+                var stamina = other.GetComponent<StaminaUpgrade>();
                 if (weapon != null && !weapon.Purchased) {
-
                     weapon.Purchased = Player.UnlockWeapon(weapon.WeaponNumber, weapon.GemCount);
+                }
+                if (health != null) {
+                    if (health.Purchasable && Player.GiveHealth(health.Amount, health.GemCount))
+                        health.Purchased();
+                }
+                if (stamina != null) {
+                    if (stamina.Purchasable && Player.GiveStamina(stamina.Amount, stamina.GemCount))
+                        stamina.Purchased();
                 }
 
             }

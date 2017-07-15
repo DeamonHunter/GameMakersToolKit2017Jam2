@@ -126,5 +126,24 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    public bool GiveHealth(int health, int Cost) {
+        if (gemCount >= Cost) {
+            curHealth += health;
+            if (curHealth > MaxHealth)
+                MaxHealth = curHealth;
+            gemCount -= Cost;
+            return true;
+        }
+        return false;
+    }
+
+    public bool GiveStamina(int stamina, int Cost) {
+        if (gemCount >= Cost) {
+            MaxStamina += stamina;
+            gemCount -= Cost;
+            return true;
+        }
+        return false;
+    }
 
 }
