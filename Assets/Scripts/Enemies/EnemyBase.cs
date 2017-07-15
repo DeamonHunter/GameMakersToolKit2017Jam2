@@ -40,7 +40,8 @@ public abstract class EnemyBase : MonoBehaviour {
             Instantiate(deathEffect, transform.position, transform.rotation);
             //records the current enemy death time
             GameManager.instance.enemyDeathTime = Time.time;
-            GameManager.instance.newEnemyDeath = true;
+            GameManager.instance.ComboTracker(3.0f);
+            //GameManager.instance.newEnemyDeath = true;
             killTime = Time.time + killRate;
             Destroy(this.gameObject);
         }

@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
     public float maxCombo;
     public float enemyDeathTime;
     public bool newEnemyDeath;
+    public float comboTimeRemaining;
+    int timeToAdd;
 
     void Awake() {
 
@@ -25,26 +27,31 @@ public class GameManager : MonoBehaviour {
         maxCombo = 10;
         enemyDeathTime = -3242094309823;
         newEnemyDeath = true;
+        comboTimeRemaining = maxComboTime;
     }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Escape))
             SceneManager.LoadScene(0);
 
-        ComboTracker();
+        comboTimeRemaining -= Time.deltaTime;
+        Streak();
     }
 
-    public void ComboTracker() {
-        if (Time.time > enemyDeathTime + maxComboTime) {
-            currentCombo = 0;
+    public void ComboTracker(float timeToAdd) {
+        comboTimeRemaining += 3.0f;
 
-        } else if (newEnemyDeath && Time.time <= enemyDeathTime + maxComboTime && currentCombo <= maxCombo) {
+
+    }
+
+    public void Streak() {
+        if (comboTimeRemaining <= 0) {
+        currentCombo = 0;
+    }
+        else if (newEnemyDeath && Time.time <= enemyDeathTime + maxComboTime && currentCombo <= maxCombo) {
             currentCombo += 1;
+            maxComboTime += 3.0f;
             newEnemyDeath = false;
         }
 
-
-
     }
-
-}
