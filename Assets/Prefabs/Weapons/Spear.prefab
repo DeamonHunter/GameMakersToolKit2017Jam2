@@ -95,10 +95,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartOffset: {x: 3, y: 7}
+  StartRotation: 0
   Player: {fileID: 0}
+  gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
   AttackForce: 100
   AttackTimeout: 0.5
-  UseHeat: 0
+  Charger: 0
+  TimeToCharge: 0
+  chargePercentage: 0
   staminaUse: 25
   StaminaGainFromEnemy: 10
 --- !u!212 &212263387713211258

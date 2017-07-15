@@ -38,8 +38,11 @@ public class PlayerController : MonoBehaviour {
 
     public bool[] Weapons;
 
+    public static bool playerDead;
+
     // Use this for initialization
     void Start() {
+        playerDead = false;
         rb = GetComponent<Rigidbody2D>();
         weaponsPurchased.Add(6);
         RandomWeapon();
@@ -115,6 +118,7 @@ public class PlayerController : MonoBehaviour {
     public void TakeDamage(float damage) {
         curHealth -= damage;
         if (curHealth <= 0) {
+            playerDead = true;
             gameObject.SetActive(false);
         }
     }

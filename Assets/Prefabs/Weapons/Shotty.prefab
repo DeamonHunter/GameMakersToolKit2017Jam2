@@ -97,6 +97,7 @@ MonoBehaviour:
   StartOffset: {x: 6, y: 3}
   StartRotation: 0
   Player: {fileID: 0}
+  gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
   AttackForce: -110
   AttackTimeout: 0.8
   Charger: 0
