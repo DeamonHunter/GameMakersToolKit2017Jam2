@@ -34,8 +34,6 @@ public class PlayerController : MonoBehaviour {
     public float curHealth;
 
     public int gemCount;
-    private float gemCollectTime;
-    private float gemCollectRate = 0.1f;
     private bool charging;
 
     public bool[] Weapons;
@@ -160,11 +158,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.transform.tag == "Gems" && Time.time > gemCollectTime) {
+        if (other.transform.tag == "Gems") {
             gemCount += 1;
-            gemCollectTime = Time.time + gemCollectRate;
             Destroy(other.gameObject);
-
         }
     }
 

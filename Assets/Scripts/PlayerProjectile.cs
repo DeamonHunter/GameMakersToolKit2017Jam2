@@ -66,6 +66,10 @@ public class PlayerProjectile : MonoBehaviour {
                 //Have some error message show. Stops pistols from buying
             }
         }
+        else if (other.tag == "Gems") {
+            player.gemCount++;
+            Destroy(other);
+        }
         else if (other.tag != "Trigger" && other.tag != "Player")
             Destroy(gameObject);
     }
