@@ -26,7 +26,10 @@ public abstract class EnemyBase : MonoBehaviour {
     public virtual void TakeDamage(float damage) {
         health -= damage;
         if (health <= 0) {
-            Instantiate(gem, transform.position, transform.rotation);
+            int xGem = Random.Range(2, 5);
+            int yGem = Random.Range(2, 5);
+            Vector3 gemSpawn = new Vector3(xGem, yGem);
+            Instantiate(gem, transform.position + gemSpawn, transform.rotation);
             Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
