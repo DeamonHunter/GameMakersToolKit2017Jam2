@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MainMenu.unity
+    guid: 19208a7db577fd04d98e8f001993a5ff
+  - enabled: 1
+    path: Assets/Deamon.scene.unity
+    guid: bf754e77b5bfe1a46ad6243531444682
+  - enabled: 1
+    path: Assets/Ripleigh Scene.unity
+    guid: 4c000a9345528fe4698067046455c883

@@ -34,8 +34,11 @@ public abstract class EnemyBase : MonoBehaviour {
             Vector3 gemSpawn = new Vector3(xGem, yGem);
             Instantiate(gem, transform.position + gemSpawn, transform.rotation);
             Instantiate(deathEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
+            //records the current enemy death time
+            GameManager.instance.enemyDeathTime = Time.time;
+            GameManager.instance.newEnemyDeath = true;
             killTime = Time.time + killRate;
+            Destroy(this.gameObject);
         }
     }
 
