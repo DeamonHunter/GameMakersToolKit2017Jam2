@@ -9,7 +9,7 @@ TagManager:
   - Gems
   - Switch
   - Trigger
-  - GameManager
+  - Shop
   layers:
   - Default
   - TransparentFX

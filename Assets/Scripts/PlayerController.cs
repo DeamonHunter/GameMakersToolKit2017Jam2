@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public Vector3 HalfScreenSize;
 
     public GameObject[] ChooseableWeapons;
+    private List<int> weaponsPurchased = new List<int>();
     private GameObject curWeapon;
 
     public float MaxHealth;
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-        Weapons = new bool[] { false, false, false, false, false, false };
+        weaponsPurchased.Add(0);
         RandomWeapon();
         curStamina = MaxStamina;
         curHealth = MaxHealth;
@@ -94,10 +95,26 @@ public class PlayerController : MonoBehaviour {
     public void RandomWeapon() {
         if (curWeapon != null)
             Destroy(curWeapon);
-        int rand = Random.Range(0, ChooseableWeapons.Length);
-        curWeapon = Instantiate(ChooseableWeapons[2], transform.position, transform.rotation, transform);
+        int rand = Random.Range(0, weaponsPurchased.Count);
+        curWeapon = Instantiate(ChooseableWeapons[weaponsPurchased[rand]], transform.position, transform.rotation, transform);
         weapon = curWeapon.GetComponent<BaseWeaponScript>();
+    }
 
+    public bool UnlockWeapon(int weaponID, int weaponPrice) {
+        if (weaponPrice <= gemCount) {
+            if (!weaponsPurchased.Contains(weaponID)) {
+                weaponsPurchased.Add(weaponID);
+                gemCount -= weaponPrice;
+                return true;
+            }
+            else {
+                //Another error message
+            }
+        }
+        else {
+            //Give error message
+        }
+        return false;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

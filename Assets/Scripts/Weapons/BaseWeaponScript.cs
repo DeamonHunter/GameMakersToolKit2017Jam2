@@ -53,6 +53,19 @@ public abstract class BaseWeaponScript : MonoBehaviour {
         else if (other.tag == "Switch") {
             other.GetComponent<SwitchScript>().HitLever();
         }
+        else if (other.tag == "Shop") {
+            if (Vector3.Distance(Player.transform.position, other.transform.position) < 20) {
+                var weapon = other.GetComponent<WeaponBuyScript>();
+                if (weapon != null && !weapon.Purchased) {
+
+                    weapon.Purchased = Player.UnlockWeapon(weapon.WeaponNumber, weapon.GemCount);
+                }
+
+            }
+            else {
+                //Have some error message show. Stops pistols from buying
+            }
+        }
 
     }
 }

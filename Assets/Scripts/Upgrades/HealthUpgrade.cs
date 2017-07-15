@@ -8,14 +8,14 @@ public class HealthUpgrade : MonoBehaviour {
     public GameObject upgradeEffect;
 
     // Use this for initialization
-    void Start () {
-        pc.GetComponent<PlayerController>();
+    void Start() {
+        //pc.GetComponent<PlayerController>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update() {
+
+    }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.transform.tag == "Player") {
