@@ -33,10 +33,18 @@ public class GameManager : MonoBehaviour {
         } else if (comboTimeRemaining <= 0) {
             comboTimeRemaining = 0;
         }
+
+        if (PlayerController.playerDead) {
+            Invoke("RestartGame", 2);
+        }
     }
 
     public void ComboTracker(float timeToAdd) {
         comboTimeRemaining += 3.0f;
 
+    }
+
+    private void RestartGame() {
+        SceneManager.LoadScene(0);
     }
 }
