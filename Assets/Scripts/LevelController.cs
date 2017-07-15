@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour {
     public GameObject[] LevelDesigns;
     public GameObject[] Enemies;
     public Vector2 RoomSize;
+    public ArrowScript Arrow;
 
     public bool LevelDone;
     public bool DoorClosed;
@@ -31,13 +32,19 @@ public class LevelController : MonoBehaviour {
         SpawnedEnemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
         if (!LevelDone && SpawnedEnemies.Count <= 0)
             FinishLevel();
+        if (!DoorClosed) {
+            Arrow.SetDirection(CurrentDoor, LevelDone);
+        }
+        else {
+            Arrow.ShowArrow = false;
+        }
     }
 
     public void SpawnLevel() {
         if (SpawnedEnemies.Count == 0) {
             CurrentDoor = Random.Range(0, 3);
             Doors[CurrentDoor].DoorOpen = true;
-            for (int i = 0; i <= waveCount; i++) {
+            for (int i = 0; i < waveCount + 5; i++) {
                 Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
                 Instantiate(Enemies[0], LevelCentres[CurrentDoor].position + rand, Quaternion.identity);
             }
