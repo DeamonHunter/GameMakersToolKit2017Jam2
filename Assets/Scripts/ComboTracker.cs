@@ -15,7 +15,6 @@ public class ComboTracker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //comboText.text = "Combo: " + gm.currentCombo;
         ComboBar.sizeDelta = new Vector2(GameManager.instance.currentCombo / GameManager.instance.maxCombo * 150, 30);
 	}
 }

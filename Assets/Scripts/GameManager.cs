@@ -37,9 +37,11 @@ public class GameManager : MonoBehaviour {
     public void ComboTracker() {
         if (Time.time > enemyDeathTime + maxComboTime) {
             currentCombo = 0;
+            maxComboTime = 3.0f;
 
         } else if (newEnemyDeath && Time.time <= enemyDeathTime + maxComboTime && currentCombo <= maxCombo) {
             currentCombo += 1;
+            maxComboTime += 3.0f;
             newEnemyDeath = false;
         }
 
