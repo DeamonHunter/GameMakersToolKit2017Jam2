@@ -13,7 +13,6 @@ public class SwitchScript : MonoBehaviour {
                 GetComponentInChildren<Animation>().Play("SwitchAnim1");
             else if (leverHit && !value)
                 GetComponentInChildren<Animation>().Play("SwitchAnim2");
-            Debug.Log(value);
             leverHit = value;
         }
     }

@@ -7,8 +7,6 @@ public class BroadSwordWeaponScript : BaseWeaponScript {
         if (_attacking)
             return 0;
 
-        Debug.Log(chargePercentage);
-
         var pos = Input.mousePosition - new Vector3(Screen.width, Screen.height) / 2;
         Player.GetComponent<Rigidbody2D>().AddForce(pos.normalized * AttackForce * (1 + 3 * chargePercentage), ForceMode2D.Impulse);
         _lastAttack = Time.time;
