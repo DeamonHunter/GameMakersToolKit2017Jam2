@@ -19,7 +19,7 @@ public class LauncherWeaponScript : BaseWeaponScript {
         _attacking = true;
         var bullet = Instantiate(Bullet, transform.position, transform.rotation).GetComponent<PlayerProjectile>();
         bullet.MoveDirection = new Vector2(pos.x, pos.y).normalized;
-        bullet.transform.position += pos.normalized * 4 * chargePercentage;
+        bullet.transform.position += pos.normalized * 8 * chargePercentage;
         bullet.staminaGain = StaminaGainFromEnemy;
         bullet.transform.localScale = new Vector3(SmallestSize + chargePercentage * AdditionalSize, SmallestSize + chargePercentage * AdditionalSize, 1);
         bullet.lifeTime = 1;
