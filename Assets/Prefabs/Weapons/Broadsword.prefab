@@ -99,7 +99,9 @@ MonoBehaviour:
   Player: {fileID: 0}
   AttackForce: 50
   AttackTimeout: 0.75
-  UseHeat: 0
+  Charger: 1
+  TimeToCharge: 2
+  chargePercentage: 0
   staminaUse: 45
   StaminaGainFromEnemy: 10
 --- !u!212 &212761908500161592

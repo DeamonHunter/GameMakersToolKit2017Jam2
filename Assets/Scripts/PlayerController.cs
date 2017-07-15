@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject[] ChooseableWeapons;
     private List<int> weaponsPurchased = new List<int>();
     private GameObject curWeapon;
+    public ChargeBarScript ChargeBar;
 
     public float MaxHealth;
     public float MaxStamina;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour {
     public int gemCount;
     private float gemCollectTime;
     private float gemCollectRate = 0.1f;
+    private bool charging;
 
     public bool[] Weapons;
 
@@ -57,12 +59,37 @@ public class PlayerController : MonoBehaviour {
         var angle = Mathf.Atan2(pos.y, pos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
-        if (Input.GetMouseButton(0) && weapon.staminaUse < CurStamina)
-            CurStamina -= weapon.Attack();
+        Attack();
 
         RegainStamina();
 
+        ChargeBar.transform.position = transform.position + new Vector3(0, 4, 0);
 
+    }
+
+    private void Attack() {
+        if (weapon.Charger) {
+            if (Input.GetMouseButtonDown(0))
+                charging = true;
+            if (charging) {
+                if (weapon.chargePercentage > 0.01)
+                    ChargeBar.gameObject.SetActive(true);
+                ChargeBar.Percantage = weapon.chargePercentage;
+                weapon.IncreaseCharge();
+            }
+            else {
+                ChargeBar.gameObject.SetActive(false);
+                charging = false;
+            }
+            if (Input.GetMouseButtonUp(0)) {
+                curStamina -= weapon.Attack();
+                charging = false;
+            }
+        }
+        else {
+            if (Input.GetMouseButton(0) && weapon.staminaUse < CurStamina)
+                CurStamina -= weapon.Attack();
+        }
     }
 
     private void Movement() {

@@ -9,7 +9,9 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     public float AttackForce;
     public float AttackTimeout;
 
-    public bool UseHeat; //When using guns
+    public bool Charger; //When using guns
+    public float TimeToCharge;
+    public float chargePercentage;
 
     public float staminaUse;
     public float StaminaGainFromEnemy;
@@ -75,6 +77,14 @@ public abstract class BaseWeaponScript : MonoBehaviour {
                 //Have some error message show. Stops pistols from buying
             }
         }
-
     }
+
+    public void IncreaseCharge() {
+        if (_attacking)
+            return;
+        chargePercentage += Time.deltaTime / TimeToCharge;
+        if (chargePercentage > 1)
+            chargePercentage = 1;
+    }
+
 }
