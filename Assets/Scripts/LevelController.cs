@@ -123,12 +123,11 @@ public class LevelController : MonoBehaviour {
     public void AuthoredWaves() {
         if (WaveEnemies == null)
             WaveEnemies = new List<int[]>();
-        WaveEnemies.Add(new[] { 20, 3, 10, 10, 2 });
-        WaveEnemies.Add(new[] { 5, 0, 0, 0, 2 });
-        WaveEnemies.Add(new[] { 0, 1, 0, 0, 2 });
-        WaveEnemies.Add(new[] { 5, 1, 0, 0, 2 });
-        WaveEnemies.Add(new[] { 5, 0, 5, 0, 2 });
-        WaveEnemies.Add(new[] { 5, 0, 5, 0, 2 });
+        WaveEnemies.Add(new[] { 10, 0, 0, 0, 2 });
+        WaveEnemies.Add(new[] { 10, 1, 0, 0, 2 });
+        WaveEnemies.Add(new[] { 10, 2, 3, 0, 2 });
+        WaveEnemies.Add(new[] { 10, 0, 20, 0, 2 });
+        WaveEnemies.Add(new[] { 10, 0, 5, 0, 2 });
         WaveEnemies.Add(new[] { 5, 0, 0, 3, 2 });
         WaveEnemies.Add(new[] { 5, 2, 0, 5, 2 });
         WaveEnemies.Add(new[] { 10, 0, 0, 10, 2 });
@@ -136,8 +135,9 @@ public class LevelController : MonoBehaviour {
         WaveEnemies.Add(new[] { 10, 1, 10, 3, 2 });
         WaveEnemies.Add(new[] { 10, 2, 10, 5, 2 });
         WaveEnemies.Add(new[] { 15, 3, 10, 3, 2 });
-        WaveEnemies.Add(new[] { 0, 5, 0, 0, 2 });
+        WaveEnemies.Add(new[] { 10, 2, 3, 3, 2 });
         WaveEnemies.Add(new[] { 20, 3, 10, 10, 2 });
+        WaveEnemies.Add(new[] { 20, 5, 20, 10, 2 });
 
     }
 }
