@@ -9,8 +9,6 @@ public class Enemy_3 : EnemyBase {
 
     float force = 5f;
 
-    private Rigidbody2D rb;
-
     // Update is called once per frame
     protected override void Update() {
         if (Activated)
