@@ -128,7 +128,7 @@ public class LevelController : MonoBehaviour {
     public void AuthoredWaves() {
         if (WaveEnemies == null)
             WaveEnemies = new List<int[]>();
-        WaveEnemies.Add(new[] { 10, 0, 0, 0, 2 });
+        WaveEnemies.Add(new[] { 10, 0, 0, 0, 0 });
         WaveEnemies.Add(new[] { 10, 1, 0, 0, 2 });
         WaveEnemies.Add(new[] { 10, 2, 3, 0, 2 });
         WaveEnemies.Add(new[] { 10, 0, 20, 0, 2 });
