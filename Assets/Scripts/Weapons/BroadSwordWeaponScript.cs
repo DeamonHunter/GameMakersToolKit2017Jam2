@@ -12,8 +12,6 @@ public class BroadSwordWeaponScript : BaseWeaponScript {
         if (_attacking)
             return 0;
 
-        Debug.Log(chargePercentage);
-
         soundNumber = Random.Range(0, 2);
         if (soundNumber == 0)
             Instantiate(attackSound1, transform.position, transform.rotation);

@@ -33,7 +33,6 @@ public class PlayerProjectile : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Entered");
         var enemy = other.gameObject.GetComponent<EnemyBase>();
         if (enemy != null) {
             other.transform.GetComponent<EnemyBase>().TakeDamage(damage);
@@ -46,7 +45,7 @@ public class PlayerProjectile : MonoBehaviour {
                 Vector3 gemSpawn = new Vector3(xGem, yGem);
                 Instantiate(gem, transform.position + gemSpawn, transform.rotation);
             }
-            GameManager.instance.ComboTracker(3.0f);
+            GameManager.instance.Combo *= 2;
             Destroy(other.gameObject);
             player.RandomWeapon();
         }

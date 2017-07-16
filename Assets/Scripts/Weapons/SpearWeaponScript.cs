@@ -6,8 +6,6 @@ public class SpearWeaponScript : BaseWeaponScript {
         if (_attacking)
             return 0;
 
-        Debug.Log("Attacking");
-
         var pos = Input.mousePosition - new Vector3(Screen.width, Screen.height) / 2;
         Player.GetComponent<Rigidbody2D>().AddForce(pos.normalized * AttackForce, ForceMode2D.Impulse);
         _lastAttack = Time.time;

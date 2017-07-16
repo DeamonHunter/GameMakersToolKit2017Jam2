@@ -1,13 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class LevelController : MonoBehaviour {
     public DoorScript[] Doors;
     public Transform[] LevelCentres;
     public GameObject[] LevelDesigns;
     public GameObject[] Enemies;
+    public List<int[]> WaveEnemies;
     public Vector2 RoomSize;
     public ArrowScript Arrow;
 
@@ -25,6 +28,7 @@ public class LevelController : MonoBehaviour {
         SpawnedEnemies = new List<GameObject>();
         switchScript = GetComponentInChildren<SwitchScript>();
         LevelDone = true;
+        AuthoredWaves();
     }
 
     // Update is called once per frame
@@ -44,9 +48,22 @@ public class LevelController : MonoBehaviour {
         if (SpawnedEnemies.Count == 0) {
             CurrentDoor = Random.Range(0, 3);
             Doors[CurrentDoor].DoorOpen = true;
-            for (int i = 0; i < waveCount + 5; i++) {
-                Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
-                Instantiate(Enemies[0], LevelCentres[CurrentDoor].position + rand, Quaternion.identity);
+            try {
+                var wave = WaveEnemies[waveCount];
+                for (int i = 0; i < wave.Length; i++) {
+                    for (int j = 0; j < wave[i]; j++) {
+                        Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
+                        Instantiate(Enemies[i], LevelCentres[CurrentDoor].position + rand, Quaternion.identity);
+                    }
+                }
+            }
+            catch (Exception) {
+                Debug.Log("Failed to find wave. Spawning random.");
+                for (int i = 0; i < waveCount + 5; i++) {
+                    Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
+                    Instantiate(Enemies[0], LevelCentres[CurrentDoor].position + rand, Quaternion.identity);
+                }
+
             }
             currentDesign = Instantiate(LevelDesigns[Random.Range(0, LevelDesigns.Length)], LevelCentres[CurrentDoor].position, Quaternion.identity);
             LevelDone = false;
@@ -78,5 +95,11 @@ public class LevelController : MonoBehaviour {
 
     public void DestroyDesign() {
         Destroy(currentDesign);
+    }
+
+    public void AuthoredWaves() {
+        if (WaveEnemies == null)
+            WaveEnemies = new List<int[]>();
+        WaveEnemies.Add(new[] { 5 });
     }
 }
