@@ -224,7 +224,7 @@ MonoBehaviour:
     type: 2}
   Energy: {fileID: 1789459229555730, guid: 1e8463e12480b4b4e8dd935888837509, type: 2}
   AttackForce: 20
-  AttackTimeout: 0.08
+  AttackTimeout: 0.12
   Charger: 0
   Invunerable: 0
   TimeToCharge: 0
