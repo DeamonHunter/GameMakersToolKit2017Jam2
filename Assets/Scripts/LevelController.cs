@@ -67,6 +67,25 @@ public class LevelController : MonoBehaviour {
 
             }
             currentDesign = Instantiate(LevelDesigns[Random.Range(0, LevelDesigns.Length)], LevelCentres[CurrentDoor].position, Quaternion.identity);
+            float degrees;
+            switch (CurrentDoor) {
+                case 0:
+                    degrees = 90;
+                    break;
+                case 1:
+                    degrees = 0;
+                    break;
+                case 2:
+                    degrees = -90;
+                    break;
+                case 3:
+                    degrees = -180;
+                    break;
+                default:
+                    degrees = 0;
+                    break;
+            }
+            currentDesign.transform.rotation = Quaternion.Euler(0, 0, degrees);
             LevelDone = false;
             DoorClosed = false;
         }
@@ -90,7 +109,7 @@ public class LevelController : MonoBehaviour {
     }
 
     public void CloseDoor() {
-        
+
         Doors[CurrentDoor].DoorOpen = false;
         DoorClosed = true;
     }
