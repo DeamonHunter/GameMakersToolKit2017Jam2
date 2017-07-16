@@ -121,6 +121,7 @@ MonoBehaviour:
   gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
   CrateFlyAway: {fileID: 1706723837902418, guid: c30248bada2a2114189eaad3d08f26d8,
     type: 2}
+  Energy: {fileID: 1789459229555730, guid: 1e8463e12480b4b4e8dd935888837509, type: 2}
   AttackForce: 100
   AttackTimeout: 0.5
   Charger: 0

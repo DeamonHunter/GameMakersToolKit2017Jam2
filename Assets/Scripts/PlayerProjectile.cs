@@ -14,6 +14,7 @@ public class PlayerProjectile : MonoBehaviour {
     private Rigidbody2D rb;
     public GameObject gem;
     public GameObject CrateFlyAway;
+    public GameObject Energy;
 
     // Use this for initialization
     void Start() {
@@ -37,7 +38,9 @@ public class PlayerProjectile : MonoBehaviour {
         var enemy = other.gameObject.GetComponent<EnemyBase>();
         if (enemy != null) {
             other.transform.GetComponent<EnemyBase>().TakeDamage(damage);
-            player.CurStamina += staminaGain;
+            for (int i = 0; i < staminaGain; i++) {
+                Instantiate(Energy, transform.position + new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f)), transform.rotation);
+            }
         }
         else if (other.tag == "Crate") {
             for (int j = 0; j < 7; j++) {
@@ -77,6 +80,10 @@ public class PlayerProjectile : MonoBehaviour {
         }
         else if (other.tag == "Gems") {
             player.gemCount++;
+            Destroy(other.gameObject);
+        }
+        else if (other.tag == "Energy") {
+            player.CurStamina++;
             Destroy(other.gameObject);
         }
         else if (other.tag != "Trigger" && other.tag != "Player") {

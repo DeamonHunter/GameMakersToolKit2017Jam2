@@ -8,6 +8,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     public PlayerController Player;
     public GameObject gem;
     public GameObject CrateFlyAway;
+    public GameObject Energy;
     public float AttackForce;
     public float AttackTimeout;
 
@@ -46,7 +47,9 @@ public abstract class BaseWeaponScript : MonoBehaviour {
         var enemy = other.gameObject.GetComponent<EnemyBase>();
         if (enemy != null) {
             other.transform.GetComponent<EnemyBase>().TakeDamage(damage);
-            Player.CurStamina += StaminaGainFromEnemy;
+            for (int i = 0; i < StaminaGainFromEnemy; i++) {
+                Instantiate(Energy, transform.position + new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f)), transform.rotation);
+            }
         }
         else if (other.tag == "Crate") {
             for (int j = 0; j < 7; j++) {
@@ -88,6 +91,10 @@ public abstract class BaseWeaponScript : MonoBehaviour {
         }
         else if (other.tag == "Gems") {
             Player.gemCount++;
+            Destroy(other.gameObject);
+        }
+        else if (other.tag == "Energy") {
+            Player.CurStamina++;
             Destroy(other.gameObject);
         }
     }
