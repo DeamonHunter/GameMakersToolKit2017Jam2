@@ -9,7 +9,7 @@ public class SwordWeaponScript : BaseWeaponScript {
             return 0;
 
         var pos = Input.mousePosition - new Vector3(Screen.width, Screen.height) / 2;
-        Player.GetComponent<Rigidbody2D>().AddForce(pos.normalized * AttackForce * (1 + 3 * chargePercentage), ForceMode2D.Impulse);
+        Player.GetComponent<Rigidbody2D>().AddForce(pos.normalized * AttackForce, ForceMode2D.Impulse);
         _lastAttack = Time.time;
         _attacking = true;
         chargePercentage = 0;

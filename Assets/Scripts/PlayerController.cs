@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Attack() {
         if (weapon.Charger) {
-            if (Input.GetMouseButtonDown(0))
+            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) && weapon.staminaUse <= CurStamina)
                 charging = true;
             if (charging) {
                 if (weapon.chargePercentage > 0.01)
@@ -95,8 +95,8 @@ public class PlayerController : MonoBehaviour {
                 ChargeBar.gameObject.SetActive(false);
                 charging = false;
             }
-            if (Input.GetMouseButtonUp(0)) {
-                curStamina -= weapon.Attack();
+            if (Input.GetMouseButtonUp(0) && weapon.staminaUse <= curStamina) {
+                CurStamina -= weapon.Attack();
                 charging = false;
             }
         }

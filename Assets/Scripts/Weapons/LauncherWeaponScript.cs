@@ -23,10 +23,11 @@ public class LauncherWeaponScript : BaseWeaponScript {
         bullet.staminaGain = StaminaGainFromEnemy;
         bullet.transform.localScale = new Vector3(SmallestSize + chargePercentage * AdditionalSize, SmallestSize + chargePercentage * AdditionalSize, 1);
         bullet.lifeTime = 1;
+        var charge = chargePercentage;
         chargePercentage = 0;
         GetComponent<Animation>().Stop();
         GetComponent<Animation>().Play();
-        return staminaUse;
+        return staminaUse + AdditionalStaminaUse * charge;
     }
 
 }

@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1512071295217790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 3, z: -0.15}
-  m_LocalScale: {x: 2, y: 3, z: 1}
+  m_LocalPosition: {x: 4, y: 1.5, z: -0.15}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -80,7 +80,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 5.12, y: 10.24}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -122,14 +122,15 @@ MonoBehaviour:
   CrateFlyAway: {fileID: 1706723837902418, guid: c30248bada2a2114189eaad3d08f26d8,
     type: 2}
   Energy: {fileID: 1789459229555730, guid: 1e8463e12480b4b4e8dd935888837509, type: 2}
-  AttackForce: -110
+  AttackForce: -90
   AttackTimeout: 0.8
   Charger: 0
   Invunerable: 0
   TimeToCharge: 0
   chargePercentage: 0
-  staminaUse: 45
-  StaminaGainFromEnemy: 10
+  staminaUse: 65
+  AdditionalStaminaUse: 0
+  StaminaGainFromEnemy: 5
   Bullet: {fileID: 1933032574887044, guid: dd2e3385e4691414898c2ecd88b04a97, type: 2}
   NumberOfBullets: 12
   Spread: 20
