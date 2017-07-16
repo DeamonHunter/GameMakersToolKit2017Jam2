@@ -26,6 +26,8 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     private float damage = 1.0f;
 
     public AudioSource gemCollectSound;
+    public AudioSource crateSmashSound;
+    public AudioSource energyCollectSound;
 
 
     // Use this for initialization
@@ -61,6 +63,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
             }
             Instantiate(CrateFlyAway, other.transform.position, other.transform.rotation);
             GameManager.instance.Combo *= 2;
+            Instantiate(crateSmashSound, transform.position, transform.rotation);
             Destroy(other.gameObject);
             Player.RandomWeapon();
 
@@ -102,6 +105,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
             Destroy(other.gameObject);
         }
         else if (other.tag == "Energy") {
+            Instantiate(energyCollectSound, transform.position, transform.rotation);
             Player.CurStamina++;
             Destroy(other.gameObject);
         }

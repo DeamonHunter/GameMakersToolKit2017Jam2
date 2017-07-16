@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour {
 
     public AudioSource upgradeSound;
     public AudioSource gemCollectSound;
+    public AudioSource playerDeathSound;
 
     public float CurStamina {
         get { return curStamina; }
@@ -135,6 +136,7 @@ public class PlayerController : MonoBehaviour {
             return;
         curHealth -= damage;
         if (curHealth <= 0) {
+            Instantiate(playerDeathSound, transform.position, transform.rotation);
             playerDead = true;
             gameObject.SetActive(false);
         }

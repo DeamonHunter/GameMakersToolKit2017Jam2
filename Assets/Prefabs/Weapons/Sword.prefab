@@ -133,6 +133,10 @@ MonoBehaviour:
   StaminaGainFromEnemy: 10
   gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
     type: 2}
+  crateSmashSound: {fileID: 82100784672712896, guid: 92b03608e8b589a4e97c795726d56ece,
+    type: 2}
+  energyCollectSound: {fileID: 82665923674136456, guid: 666a5f88549a79744b995b97a460f016,
+    type: 2}
   swordAttack: {fileID: 82303318083484054, guid: a6c0993e88ecd8e41bc118ced11f7c50,
     type: 2}
   swordAttack2: {fileID: 82081360049148648, guid: df1d7707b2ec2a8458e344d4116a20fe,
