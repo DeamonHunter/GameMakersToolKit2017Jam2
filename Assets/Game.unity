@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 4998942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -84.21786, y: -27.718084, z: 0}
+  m_LocalPosition: {x: -84.21786, y: -27.718084, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3799acaf00ffd14f97392cd61b934e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemCount: 10
+  GemCount: 50
   Amount: 2
   gemSprite: {fileID: 1426089387186126, guid: 79f820dc99a64034384c3aa526c9617b, type: 2}
   UnlockedSprite: {fileID: 1919532849466158, guid: 364e94c8086bebc4c83f25bd65cdaa6f,
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponNumber: 8
-  GemCount: 60
+  GemCount: 210
   GemOffset: {x: -2.5, y: 5.2, z: 0}
   gemSprite: {fileID: 1426089387186126, guid: 79f820dc99a64034384c3aa526c9617b, type: 2}
   UnlockedSprite: {fileID: 1919532849466158, guid: 364e94c8086bebc4c83f25bd65cdaa6f,
@@ -3459,7 +3459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponNumber: 4
-  GemCount: 60
+  GemCount: 300
   GemOffset: {x: -2.5, y: -5.2, z: 0}
   gemSprite: {fileID: 1426089387186126, guid: 79f820dc99a64034384c3aa526c9617b, type: 2}
   UnlockedSprite: {fileID: 1919532849466158, guid: 364e94c8086bebc4c83f25bd65cdaa6f,
@@ -5272,7 +5272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponNumber: 3
-  GemCount: 30
+  GemCount: 300
   GemOffset: {x: -2.5, y: -5.2, z: 0}
   gemSprite: {fileID: 1426089387186126, guid: 79f820dc99a64034384c3aa526c9617b, type: 2}
   UnlockedSprite: {fileID: 1919532849466158, guid: 364e94c8086bebc4c83f25bd65cdaa6f,
@@ -5769,7 +5769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5327d5109acd64da0d90c26b4ce932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemCount: 10
+  GemCount: 30
   gemSprite: {fileID: 1426089387186126, guid: 79f820dc99a64034384c3aa526c9617b, type: 2}
   UnlockedSprite: {fileID: 1919532849466158, guid: 364e94c8086bebc4c83f25bd65cdaa6f,
     type: 2}
@@ -6575,7 +6575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponNumber: 0
-  GemCount: 25
+  GemCount: 150
   GemOffset: {x: -2.5, y: -5.2, z: 0}
   gemSprite: {fileID: 1426089387186126, guid: 79f820dc99a64034384c3aa526c9617b, type: 2}
   UnlockedSprite: {fileID: 1919532849466158, guid: 364e94c8086bebc4c83f25bd65cdaa6f,
@@ -6976,7 +6976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponNumber: 5
-  GemCount: 10
+  GemCount: 60
   GemOffset: {x: -2.5, y: -5.2, z: 0}
   gemSprite: {fileID: 1426089387186126, guid: 79f820dc99a64034384c3aa526c9617b, type: 2}
   UnlockedSprite: {fileID: 1919532849466158, guid: 364e94c8086bebc4c83f25bd65cdaa6f,
@@ -7052,7 +7052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 705944771}
-  maxComboTime: 21
+  maxComboTime: 4
   comboTimeRemaining: 0
   gameOverText: {fileID: 188159491}
   gameOverImage: {fileID: 341073635}
@@ -7299,7 +7299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponNumber: 2
-  GemCount: 30
+  GemCount: 210
   GemOffset: {x: -2.5, y: -5.2, z: 0}
   gemSprite: {fileID: 1426089387186126, guid: 79f820dc99a64034384c3aa526c9617b, type: 2}
   UnlockedSprite: {fileID: 1919532849466158, guid: 364e94c8086bebc4c83f25bd65cdaa6f,
@@ -7622,7 +7622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponNumber: 1
-  GemCount: 5
+  GemCount: 90
   GemOffset: {x: -2.5, y: 5.2, z: 0}
   gemSprite: {fileID: 1426089387186126, guid: 79f820dc99a64034384c3aa526c9617b, type: 2}
   UnlockedSprite: {fileID: 1919532849466158, guid: 364e94c8086bebc4c83f25bd65cdaa6f,
@@ -8165,7 +8165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dbccd92cfa73584e9ac8ff0d64018d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemCount: 20
+  GemCount: 50
   Amount: 10
   gemSprite: {fileID: 1426089387186126, guid: 79f820dc99a64034384c3aa526c9617b, type: 2}
   UnlockedSprite: {fileID: 1919532849466158, guid: 364e94c8086bebc4c83f25bd65cdaa6f,
@@ -9881,7 +9881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponNumber: 7
-  GemCount: 15
+  GemCount: 120
   GemOffset: {x: -2.5, y: 5.2, z: 0}
   gemSprite: {fileID: 1426089387186126, guid: 79f820dc99a64034384c3aa526c9617b, type: 2}
   UnlockedSprite: {fileID: 1919532849466158, guid: 364e94c8086bebc4c83f25bd65cdaa6f,

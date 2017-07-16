@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
     public GameObject player;
-    public float maxComboTime = 8.0f;
+    public float maxComboTime = 4.0f;
     public float comboTimeRemaining;
 
     public int Combo {
