@@ -972,6 +972,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 188159489}
+--- !u!1001 &208326868
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4403795708649634, guid: bb4ac6afa74d94f48b962392cc8a2873, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403795708649634, guid: bb4ac6afa74d94f48b962392cc8a2873, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403795708649634, guid: bb4ac6afa74d94f48b962392cc8a2873, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403795708649634, guid: bb4ac6afa74d94f48b962392cc8a2873, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403795708649634, guid: bb4ac6afa74d94f48b962392cc8a2873, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403795708649634, guid: bb4ac6afa74d94f48b962392cc8a2873, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403795708649634, guid: bb4ac6afa74d94f48b962392cc8a2873, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403795708649634, guid: bb4ac6afa74d94f48b962392cc8a2873, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: bb4ac6afa74d94f48b962392cc8a2873, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &221395457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,7 +2858,6 @@ MonoBehaviour:
   StaminaCooldownPeriod: 0.66
   curHealth: 0
   gemCount: 100
-  Invunerable: 0
   Weapons: 
 --- !u!212 &705944775
 SpriteRenderer:
