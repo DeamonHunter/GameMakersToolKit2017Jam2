@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour {
             gameOverImage.SetActive(true);
 
         }
-        Debug.Log(comboTimeRemaining);
+        //Debug.Log(comboTimeRemaining);
     }
 
     public void ComboTracker() {
