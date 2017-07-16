@@ -80,31 +80,32 @@ Animation:
   m_CullingType: 0
 --- !u!114 &114000093231305090
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935496681584110}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49095e4f88715de409b133c77d004440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartOffset: {x: 3, y: 1}
+  StartOffset: {x: 0, y: 0}
   StartRotation: 0
   Player: {fileID: 0}
   gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
   CrateFlyAway: {fileID: 1706723837902418, guid: c30248bada2a2114189eaad3d08f26d8,
     type: 2}
   Energy: {fileID: 1789459229555730, guid: 1e8463e12480b4b4e8dd935888837509, type: 2}
-  AttackForce: -25
-  AttackTimeout: 0.15
+  AttackForce: 0
+  AttackTimeout: 0
   Charger: 0
   Invunerable: 0
   TimeToCharge: 0
   chargePercentage: 0
-  staminaUse: 8
+  staminaUse: 0
   AdditionalStaminaUse: 0
-  StaminaGainFromEnemy: 5
+  StaminaGainFromEnemy: 0
+  gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
     type: 2}
   crateSmashSound: {fileID: 82100784672712896, guid: 92b03608e8b589a4e97c795726d56ece,
     type: 2}

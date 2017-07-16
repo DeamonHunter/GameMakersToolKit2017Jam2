@@ -163,14 +163,18 @@ MonoBehaviour:
   TimeToCharge: 0
   chargePercentage: 0
   staminaUse: 5
-  AdditionalStaminaUse: 0
-  StaminaGainFromEnemy: 5
+<<<<<<< HEAD
+  StaminaGainFromEnemy: 10
   gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
     type: 2}
   crateSmashSound: {fileID: 82100784672712896, guid: 92b03608e8b589a4e97c795726d56ece,
     type: 2}
   energyCollectSound: {fileID: 82665923674136456, guid: 666a5f88549a79744b995b97a460f016,
     type: 2}
+=======
+  AdditionalStaminaUse: 0
+  StaminaGainFromEnemy: 5
+>>>>>>> origin/Deamon
   Bullet: {fileID: 1933032574887044, guid: dd2e3385e4691414898c2ecd88b04a97, type: 2}
   GunLeft: {fileID: 1968013084217610}
   GunRight: {fileID: 1807753849747096}
