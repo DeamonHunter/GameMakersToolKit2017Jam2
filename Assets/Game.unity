@@ -1210,7 +1210,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 73e864094e6c2874c863d8c148e55287, type: 3}
-    m_FontSize: 150
+    m_FontSize: 130
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -6393,6 +6393,7 @@ MonoBehaviour:
   - {fileID: 1428270229916060, guid: c03883ed2fc1b834bb6275503e5e4a43, type: 2}
   - {fileID: 1736590717282148, guid: d6cafb11e56ff9940bb3fc15a7916e4c, type: 2}
   - {fileID: 1170563776539984, guid: f12360ecf5970384090bb3acc7764854, type: 2}
+  - {fileID: 1483629741608764, guid: fff95b144e193764e8ae62888490c020, type: 2}
   RoomSize: {x: 25, y: 25}
   Arrow: {fileID: 803980387}
   LevelDone: 0
