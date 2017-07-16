@@ -107,7 +107,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
         }
         else if (other.tag == "Energy") {
             Instantiate(energyCollectSound, transform.position, transform.rotation);
-            Player.CurStamina++;
+            Player.CurStamina += 5;
             Destroy(other.gameObject);
         }
     }

@@ -164,7 +164,7 @@ MonoBehaviour:
   chargePercentage: 0
   staminaUse: 5
   AdditionalStaminaUse: 0
-  StaminaGainFromEnemy: 5
+  StaminaGainFromEnemy: 1
   gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
     type: 2}
   crateSmashSound: {fileID: 82100784672712896, guid: 92b03608e8b589a4e97c795726d56ece,

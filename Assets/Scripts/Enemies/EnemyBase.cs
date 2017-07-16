@@ -29,7 +29,7 @@ public abstract class EnemyBase : MonoBehaviour {
         health -= damage;
         if (health <= 0) {
             GameManager.instance.Combo++;
-            for (int i = 0; i < GameManager.instance.Combo; i++) {
+            for (int i = 0; i < Mathf.Floor(Mathf.Log(GameManager.instance.Combo * 2) + 1); i++) {
                 for (int j = 0; j < 1; j++) {
                     float xGem = Random.Range(-4.0f, 4.0f);
                     float yGem = Random.Range(-4.0f, 4.0f);
