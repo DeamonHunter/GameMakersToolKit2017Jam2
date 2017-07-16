@@ -24,8 +24,21 @@ public class PlayerController : MonoBehaviour {
     public float CurStamina {
         get { return curStamina; }
         set {
-            curStamina = value;
-            staminaCooldown = Time.time + StaminaCooldownPeriod;
+            if (value > curStamina) {
+                if (value > MaxStamina)
+                    curStamina = MaxStamina;
+                else
+                    curStamina = value;
+                staminaCooldown = Time.time - 1;
+            }
+            else {
+                if (value < 0)
+                    curStamina = 0;
+                else
+                    curStamina = value;
+                staminaCooldown = Time.time + StaminaCooldownPeriod;
+
+            }
         }
     }
 
