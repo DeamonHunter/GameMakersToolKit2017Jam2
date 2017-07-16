@@ -61,9 +61,25 @@ public class LevelController : MonoBehaviour {
         }
         catch (Exception) {
             Debug.Log("Failed to find wave. Spawning random.");
-            for (int i = 0; i < waveCount + 5; i++) {
+            for (int i = 0; i < waveCount / 4 + 5; i++) {
                 Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
                 Instantiate(Enemies[0], LevelCentres[CurrentDoor].position + rand, Quaternion.identity, EnemyParent.transform);
+            }
+            for (int i = 0; i < waveCount / 6 + 2; i++) {
+                Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
+                Instantiate(Enemies[1], LevelCentres[CurrentDoor].position + rand, Quaternion.identity, EnemyParent.transform);
+            }
+            for (int i = 0; i < waveCount / 3 + 3; i++) {
+                Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
+                Instantiate(Enemies[2], LevelCentres[CurrentDoor].position + rand, Quaternion.identity, EnemyParent.transform);
+            }
+            for (int i = 0; i < waveCount / 5 + 2; i++) {
+                Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
+                Instantiate(Enemies[3], LevelCentres[CurrentDoor].position + rand, Quaternion.identity, EnemyParent.transform);
+            }
+            for (int i = 0; i < 2; i++) {
+                Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
+                Instantiate(Enemies[4], LevelCentres[CurrentDoor].position + rand, Quaternion.identity, EnemyParent.transform);
             }
 
         }
