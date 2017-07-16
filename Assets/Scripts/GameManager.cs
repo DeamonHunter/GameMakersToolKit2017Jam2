@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
     private int combo;
     int timeToAdd;
     public Text gameOverText;
+    public GameObject gameOverImage;
 
 
     void Awake() {
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour {
         combo = 0;
         gameOverText.text = "GAME OVER";
         gameOverText.enabled = false;
+        gameOverImage.SetActive(false);
     }
 
     private void Update() {
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour {
         if (PlayerController.playerDead) {
             Invoke("RestartGame", 3);
             gameOverText.enabled = true;
+            gameOverImage.SetActive(true);
 
         }
     }
