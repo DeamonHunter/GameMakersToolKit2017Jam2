@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour {
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Escape))
             SceneManager.LoadScene(0);
+        if (Input.GetKeyDown(KeyCode.P) && player != null)
+            player.GetComponent<PlayerController>().gemCount += 500;
 
         if (comboTimeRemaining > maxComboTime) {
             comboTimeRemaining = maxComboTime;

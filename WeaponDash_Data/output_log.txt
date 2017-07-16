@@ -1,0 +1,43 @@
+Initialize engine version: 2017.1.0f3 (472613c02cf7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon R9 200 Series (ID=0x67b1)
+    Vendor:   ATI
+    VRAM:     4073 MB
+    Driver:   22.19.171.257
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\UnityEngine.Timeline.dll (this message is harmless)
+Loading D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\UnityEngine.Timeline.dll into Unity Child Domain
+Platform assembly: D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\Deamon\Personal Projects\GameMakersToolKit2017Jam2\WeaponDash_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.059 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.250486 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.863842 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1423.
+Total: 1.557055 ms (FindLiveObjects: 0.116715 ms CreateObjectMapping: 0.035167 ms MarkObjects: 0.457942 ms  DeleteObjects: 0.946465 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.958442 ms
+
+Unloading 491 unused Assets to reduce memory usage. Loaded Objects now: 381.
+Total: 7.226929 ms (FindLiveObjects: 0.039244 ms CreateObjectMapping: 0.025993 ms MarkObjects: 0.183992 ms  DeleteObjects: 6.977189 ms)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 1018 -> priority: 1 
+  Thread -> id: e8 -> priority: 1 
+  Thread -> id: 33bc -> priority: 1 
+  Thread -> id: 1c10 -> priority: 1 

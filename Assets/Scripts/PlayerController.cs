@@ -169,6 +169,26 @@ public class PlayerController : MonoBehaviour {
                         Instantiate(upgradeSound, transform.position, transform.rotation);
                         shopMessage.Showtext("You have bought the Double Pistols!");
                         break;
+                    case 3:
+                        Instantiate(upgradeSound, transform.position, transform.rotation);
+                        shopMessage.Showtext("You have bought the Shotgun!");
+                        break;
+                    case 4:
+                        Instantiate(upgradeSound, transform.position, transform.rotation);
+                        shopMessage.Showtext("You have bought the Launcher!");
+                        break;
+                    case 5:
+                        Instantiate(upgradeSound, transform.position, transform.rotation);
+                        shopMessage.Showtext("You have bought the Pistol!");
+                        break;
+                    case 7:
+                        Instantiate(upgradeSound, transform.position, transform.rotation);
+                        shopMessage.Showtext("You have bought the Knives!");
+                        break;
+                    case 8:
+                        Instantiate(upgradeSound, transform.position, transform.rotation);
+                        shopMessage.Showtext("You have bought the Mace!");
+                        break;
                 }
                 return true;
             }
