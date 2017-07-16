@@ -51,6 +51,6 @@ public class DoorScript : MonoBehaviour {
             }
         }
 
-        box.enabled = progress < 0.6;
+        box.enabled = progress < 0.8;
     }
 }

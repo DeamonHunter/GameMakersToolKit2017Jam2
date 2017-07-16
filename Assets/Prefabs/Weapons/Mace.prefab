@@ -38,12 +38,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1195284658414926}
   m_LocalRotation: {x: 0, y: 0, z: -0.9396926, w: 0.34202018}
-  m_LocalPosition: {x: 41.38446, y: 109.931885, z: -0.14999962}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 2, y: 0, z: -0.14999962}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -446.5103}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -294.99628}
 --- !u!50 &50936870825020732
 Rigidbody2D:
   serializedVersion: 4
@@ -80,7 +80,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 5.12, y: 10.24}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -116,20 +116,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcff54e4ef0588468ef2603813966f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartOffset: {x: 4, y: 0}
+  StartOffset: {x: 2, y: 0}
   StartRotation: -140
   Player: {fileID: 0}
   gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
   CrateFlyAway: {fileID: 1706723837902418, guid: c30248bada2a2114189eaad3d08f26d8,
     type: 2}
   Energy: {fileID: 1789459229555730, guid: 1e8463e12480b4b4e8dd935888837509, type: 2}
-  AttackForce: 60
+  AttackForce: 65
   AttackTimeout: 0.9
   Charger: 1
   Invunerable: 0
   TimeToCharge: 1.3
   chargePercentage: 0
   staminaUse: 55
+  AdditionalStaminaUse: 20
   StaminaGainFromEnemy: 10
   gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
     type: 2}

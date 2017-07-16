@@ -18,6 +18,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     public float chargePercentage;
 
     public float staminaUse;
+    public float AdditionalStaminaUse;
     public float StaminaGainFromEnemy;
 
     protected bool _attacking;

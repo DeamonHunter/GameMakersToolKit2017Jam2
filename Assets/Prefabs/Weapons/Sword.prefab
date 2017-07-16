@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347808113255256}
   m_LocalRotation: {x: 0, y: 0, z: -0.7660445, w: 0.64278764}
-  m_LocalPosition: {x: 4, y: 0, z: -0.14999962}
-  m_LocalScale: {x: 1.25, y: 1.7, z: 1}
+  m_LocalPosition: {x: 2, y: 0, z: -0.14999962}
+  m_LocalScale: {x: 0.6, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -116,20 +116,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f862e1d523a9046a1133cad8342994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartOffset: {x: 4, y: 0}
-  StartRotation: -100
+  StartOffset: {x: -2, y: 0}
+  StartRotation: 100
   Player: {fileID: 0}
   gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
   CrateFlyAway: {fileID: 1706723837902418, guid: c30248bada2a2114189eaad3d08f26d8,
     type: 2}
   Energy: {fileID: 1789459229555730, guid: 1e8463e12480b4b4e8dd935888837509, type: 2}
-  AttackForce: 35
+  AttackForce: 40
   AttackTimeout: 0.25
   Charger: 0
   Invunerable: 0
   TimeToCharge: 0
   chargePercentage: 0
-  staminaUse: 15
+  staminaUse: 12
+  AdditionalStaminaUse: 0
   StaminaGainFromEnemy: 10
   gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
     type: 2}

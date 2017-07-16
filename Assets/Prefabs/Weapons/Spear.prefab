@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1328188826959918}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3, y: 7, z: -0.15}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -122,13 +122,14 @@ MonoBehaviour:
   CrateFlyAway: {fileID: 1706723837902418, guid: c30248bada2a2114189eaad3d08f26d8,
     type: 2}
   Energy: {fileID: 1789459229555730, guid: 1e8463e12480b4b4e8dd935888837509, type: 2}
-  AttackForce: 100
+  AttackForce: 40
   AttackTimeout: 0.5
-  Charger: 0
+  Charger: 1
   Invunerable: 0
-  TimeToCharge: 0
+  TimeToCharge: 0.75
   chargePercentage: 0
   staminaUse: 25
+  AdditionalStaminaUse: 25
   StaminaGainFromEnemy: 10
   gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
     type: 2}

@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1935496681584110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 2, z: 0}
+  m_LocalPosition: {x: 3, y: 1, z: 0}
   m_LocalScale: {x: 1.6, y: 1.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49095e4f88715de409b133c77d004440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartOffset: {x: 4, y: 0}
+  StartOffset: {x: 3, y: 1}
   StartRotation: 0
   Player: {fileID: 0}
   gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
@@ -103,8 +103,8 @@ MonoBehaviour:
   TimeToCharge: 0
   chargePercentage: 0
   staminaUse: 8
-  StaminaGainFromEnemy: 10
-  gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
+  AdditionalStaminaUse: 0
+  StaminaGainFromEnemy: 5
     type: 2}
   crateSmashSound: {fileID: 82100784672712896, guid: 92b03608e8b589a4e97c795726d56ece,
     type: 2}

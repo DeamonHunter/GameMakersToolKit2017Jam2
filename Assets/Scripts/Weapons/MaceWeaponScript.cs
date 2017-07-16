@@ -14,6 +14,7 @@ public class MaceWeaponScript : BaseWeaponScript {
         Player.GetComponent<Rigidbody2D>().AddForce(pos.normalized * AttackForce * (1 + 2 * chargePercentage), ForceMode2D.Impulse);
         _lastAttack = Time.time;
         _attacking = true;
+        var charge = chargePercentage;
         chargePercentage = 0;
         if (AttackedLeft) {
             GetComponent<Animation>().Stop("MaceAttack1");
@@ -25,6 +26,6 @@ public class MaceWeaponScript : BaseWeaponScript {
             GetComponent<Animation>().Play("MaceAttack2");
             AttackedLeft = true;
         }
-        return staminaUse;
+        return staminaUse + AdditionalStaminaUse * charge;
     }
 }

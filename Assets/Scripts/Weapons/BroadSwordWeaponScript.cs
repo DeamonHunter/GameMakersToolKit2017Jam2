@@ -23,9 +23,10 @@ public class BroadSwordWeaponScript : BaseWeaponScript {
         Player.GetComponent<Rigidbody2D>().AddForce(pos.normalized * AttackForce * (1 + 3 * chargePercentage), ForceMode2D.Impulse);
         _lastAttack = Time.time;
         _attacking = true;
+        var charge = chargePercentage;
         chargePercentage = 0;
         GetComponent<Animation>().Stop();
         GetComponent<Animation>().Play();
-        return staminaUse;
+        return staminaUse + AdditionalStaminaUse * charge;
     }
 }
