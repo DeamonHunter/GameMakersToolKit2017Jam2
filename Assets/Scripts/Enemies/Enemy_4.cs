@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Enemy_4 : EnemyBase {
 
+    public bool move = false;
+
     // Update is called once per frame
     protected override void Update() {
-     //   Movement();
+        if (Activated) {
+            move = true;
+        }
     }
+     
 
-    //private void Movement() {
-     //   if (Activated && GameManager.instance.player) {
-      //      transform.position = Vector2.MoveTowards(transform.position, GameManager.instance.player.transform.position, moveSpeed *
-      //      Time.deltaTime);
-      //  }
-   // }
+
 }

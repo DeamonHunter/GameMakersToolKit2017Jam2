@@ -113,7 +113,7 @@ MonoBehaviour:
   moveSpeed: 3
   health: 2
   damage: 1
-  damageRate: 0.2
+  damageRate: 1
   Activated: 0
   enemyProjectile: {fileID: 1933032574887044, guid: 3fdc5c83c62968d44835d9274cab847d,
     type: 2}
