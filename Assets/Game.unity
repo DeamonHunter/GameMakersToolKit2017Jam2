@@ -1231,14 +1231,14 @@ CanvasRenderer:
 --- !u!1 &192844520
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1143548952017092, guid: 5ffce20b679c6324b9a811a1c6fdf8f7,
+  m_PrefabParentObject: {fileID: 1883630382541078, guid: 22c561b193a29f04983a32326ed69340,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 192844521}
   m_Layer: 0
-  m_Name: Level Design 3
+  m_Name: Level Design 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1247,7 +1247,7 @@ GameObject:
 --- !u!4 &192844521
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4896882828495682, guid: 5ffce20b679c6324b9a811a1c6fdf8f7,
+  m_PrefabParentObject: {fileID: 4877424467329320, guid: 22c561b193a29f04983a32326ed69340,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 192844520}
@@ -6420,6 +6420,8 @@ MonoBehaviour:
   - {fileID: 1165805462968822, guid: 2cd5d3362be494542b909ca3d204150e, type: 2}
   - {fileID: 1624765011243118, guid: c412b6870f6d8b44fbc07444e5c85306, type: 2}
   - {fileID: 1143548952017092, guid: 5ffce20b679c6324b9a811a1c6fdf8f7, type: 2}
+  - {fileID: 1173376603639198, guid: 3145d12531394f248afc134439131baf, type: 2}
+  - {fileID: 1883630382541078, guid: 22c561b193a29f04983a32326ed69340, type: 2}
   Enemies:
   - {fileID: 1943135694972620, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
   RoomSize: {x: 50, y: 70}
