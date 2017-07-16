@@ -6,6 +6,7 @@ public abstract class EnemyBase : MonoBehaviour {
     protected GameObject Player;
     public GameObject gem;
     public GameObject deathEffect;
+    public GameObject FlyAwayText;
 
     public float moveSpeed = 5.0f;
     public float health = 1.0f;
@@ -36,6 +37,7 @@ public abstract class EnemyBase : MonoBehaviour {
                     Instantiate(gem, transform.position + gemSpawn, transform.rotation);
                 }
             }
+            Instantiate(FlyAwayText, transform.position, transform.rotation);
             Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }

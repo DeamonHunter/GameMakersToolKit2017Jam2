@@ -2816,7 +2816,6 @@ MonoBehaviour:
   StaminaCooldownPeriod: 0.66
   curHealth: 0
   gemCount: 100
-  Invunerable: 0
   Weapons: 
 --- !u!212 &705944775
 SpriteRenderer:
