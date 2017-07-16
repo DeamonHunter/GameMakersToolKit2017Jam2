@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4770763785263664}
   - component: {fileID: 212071014083256742}
   m_Layer: 0
-  m_Name: Bought
+  m_Name: Bought Red Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
