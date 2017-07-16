@@ -6457,7 +6457,7 @@ MonoBehaviour:
   - {fileID: 1736590717282148, guid: d6cafb11e56ff9940bb3fc15a7916e4c, type: 2}
   - {fileID: 1170563776539984, guid: f12360ecf5970384090bb3acc7764854, type: 2}
   - {fileID: 1483629741608764, guid: fff95b144e193764e8ae62888490c020, type: 2}
-  RoomSize: {x: 50, y: 70}
+  RoomSize: {x: 50, y: 60}
   Arrow: {fileID: 803980387}
   LevelDone: 0
   DoorClosed: 0
