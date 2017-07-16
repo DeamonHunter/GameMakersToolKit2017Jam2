@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4803552826284612}
   - component: {fileID: 82792380578456530}
+  - component: {fileID: 114358725894685268}
   m_Layer: 0
   m_Name: equip gun 1
   m_TagString: Untagged
@@ -95,7 +96,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -107,7 +108,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -119,4 +120,16 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
+--- !u!114 &114358725894685268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1529799569906738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ab758318814ad468c2819474dfb761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 1

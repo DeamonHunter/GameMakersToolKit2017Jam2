@@ -25,6 +25,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
 
     private float damage = 1.0f;
 
+    public AudioSource gemCollectSound;
 
 
     // Use this for initialization
@@ -90,6 +91,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
             }
         }
         else if (other.tag == "Gems") {
+            Instantiate(gemCollectSound, transform.position, transform.rotation);
             Player.gemCount++;
             Destroy(other.gameObject);
         }

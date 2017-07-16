@@ -130,6 +130,8 @@ MonoBehaviour:
   chargePercentage: 0
   staminaUse: 45
   StaminaGainFromEnemy: 10
+  gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
+    type: 2}
   Bullet: {fileID: 1933032574887044, guid: dd2e3385e4691414898c2ecd88b04a97, type: 2}
   NumberOfBullets: 12
   Spread: 20

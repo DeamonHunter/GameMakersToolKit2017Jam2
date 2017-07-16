@@ -130,6 +130,10 @@ MonoBehaviour:
   chargePercentage: 0
   staminaUse: 25
   StaminaGainFromEnemy: 10
+  gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
+    type: 2}
+  spearAttack: {fileID: 82434512132222152, guid: 65b3e3a520cc17b48aa40e1b7be1aaa3,
+    type: 2}
 --- !u!212 &212263387713211258
 SpriteRenderer:
   m_ObjectHideFlags: 1

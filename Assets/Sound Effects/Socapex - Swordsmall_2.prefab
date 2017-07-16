@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4056216013145250}
   - component: {fileID: 82865760721933218}
+  - component: {fileID: 114228567036278664}
   m_Layer: 0
   m_Name: Socapex - Swordsmall_2
   m_TagString: Untagged
@@ -120,3 +121,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114228567036278664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1261389956471910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ab758318814ad468c2819474dfb761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 3

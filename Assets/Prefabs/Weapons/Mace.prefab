@@ -131,6 +131,8 @@ MonoBehaviour:
   chargePercentage: 0
   staminaUse: 55
   StaminaGainFromEnemy: 10
+  gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
+    type: 2}
 --- !u!212 &212721330438244090
 SpriteRenderer:
   m_ObjectHideFlags: 1

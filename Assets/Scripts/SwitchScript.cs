@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwitchScript : MonoBehaviour {
 
     public LevelController levelController;
+    public AudioSource leverSound;
 
     public bool LeverHit {
         get { return leverHit; }
@@ -22,6 +23,7 @@ public class SwitchScript : MonoBehaviour {
     public void HitLever() {
         if (leverHit)
             return;
+        Instantiate(leverSound, transform.position, transform.rotation);
         levelController.SpawnLevel();
         LeverHit = true;
     }

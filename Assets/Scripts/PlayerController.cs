@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour {
     public float StaminaCooldownPeriod;
 
     public AudioSource upgradeSound;
+    public AudioSource gemCollectSound;
 
     public float CurStamina {
         get { return curStamina; }
@@ -156,12 +157,15 @@ public class PlayerController : MonoBehaviour {
                 shopMessage.gameObject.SetActive(true);
                 switch (weaponID) {
                     case 0:
+                        Instantiate(upgradeSound, transform.position, transform.rotation);
                         shopMessage.Showtext("You have bought the Broadsword!");
                         break;
                     case 1:
+                        Instantiate(upgradeSound, transform.position, transform.rotation);
                         shopMessage.Showtext("You have bought the Spear!");
                         break;
                     case 2:
+                        Instantiate(upgradeSound, transform.position, transform.rotation);
                         shopMessage.Showtext("You have bought the Double Pistols!");
                         break;
                 }
@@ -181,6 +185,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.transform.tag == "Gems") {
+            Instantiate(gemCollectSound, transform.position, transform.rotation);
             gemCount += 1;
             Destroy(other.gameObject);
         }
@@ -193,6 +198,7 @@ public class PlayerController : MonoBehaviour {
                 MaxHealth = curHealth;
             gemCount -= Cost;
             shopMessage.gameObject.SetActive(true);
+            Instantiate(upgradeSound, transform.position, transform.rotation);
             shopMessage.Showtext("Have just bought " + health + " hp!");
             return true;
         }
@@ -206,6 +212,7 @@ public class PlayerController : MonoBehaviour {
             MaxStamina += stamina;
             gemCount -= Cost;
             shopMessage.gameObject.SetActive(true);
+            Instantiate(upgradeSound, transform.position, transform.rotation);
             shopMessage.Showtext("Have just bought " + stamina + " max stamina!");
             return true;
         }

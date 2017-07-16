@@ -16,6 +16,8 @@ public class PlayerProjectile : MonoBehaviour {
     public GameObject CrateFlyAway;
     public GameObject Energy;
 
+    public AudioSource gemCollectSound;
+
     // Use this for initialization
     void Start() {
         Destroy(this.gameObject, lifeTime);
@@ -79,6 +81,7 @@ public class PlayerProjectile : MonoBehaviour {
             }
         }
         else if (other.tag == "Gems") {
+            Instantiate(gemCollectSound, transform.position, transform.rotation);
             player.gemCount++;
             Destroy(other.gameObject);
         }

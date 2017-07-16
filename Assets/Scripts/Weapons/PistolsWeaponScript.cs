@@ -7,6 +7,8 @@ public class PistolsWeaponScript : BaseWeaponScript {
 
     private bool LeftSideAttacked;
 
+    public AudioSource pistolShotSound;
+
     public override float Attack() {
         if (_attacking)
             return 0;
@@ -18,6 +20,7 @@ public class PistolsWeaponScript : BaseWeaponScript {
         if (LeftSideAttacked) {
             GetComponent<Animation>().Stop("PistolRightAttack");
             GetComponent<Animation>().Play("PistolRightAttack");
+            Instantiate(pistolShotSound, transform.position, transform.rotation);
             var bullet = Instantiate(Bullet, GunRight.transform.position, GunRight.transform.rotation).GetComponent<PlayerProjectile>();
             bullet.MoveDirection = new Vector2(pos.x, pos.y).normalized;
             bullet.transform.position += new Vector3(bullet.MoveDirection.x, bullet.MoveDirection.y) * 2;
@@ -27,6 +30,7 @@ public class PistolsWeaponScript : BaseWeaponScript {
         else {
             GetComponent<Animation>().Stop("PistolLeftAttack");
             GetComponent<Animation>().Play("PistolLeftAttack");
+            Instantiate(pistolShotSound, transform.position, transform.rotation);
             var bullet = Instantiate(Bullet, GunLeft.transform.position, GunLeft.transform.rotation).GetComponent<PlayerProjectile>();
             bullet.MoveDirection = new Vector2(pos.x, pos.y).normalized;
             bullet.transform.position += new Vector3(bullet.MoveDirection.x, bullet.MoveDirection.y) * 2;
