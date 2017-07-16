@@ -34,14 +34,20 @@ public class AttackCollideScript : MonoBehaviour {
         else if (other.tag == "Shop") {
             if (Vector3.Distance(Player.transform.position, other.transform.position) < 20) {
                 var weapon = other.GetComponent<WeaponBuyScript>();
-                var health = other.GetComponent<HealthUpgrade>();
+                var health = other.GetComponent<HealUpgrade>();
+                var maxHealth = other.GetComponent<MaxHealthUpgrade>();
                 var stamina = other.GetComponent<StaminaUpgrade>();
                 if (weapon != null && !weapon.Purchased) {
                     weapon.Purchased = Player.UnlockWeapon(weapon.WeaponNumber, weapon.GemCount);
                 }
                 if (health != null) {
-                    if (health.Purchasable && Player.GiveHealth(health.Amount, health.GemCount))
+                    if (health.Purchasable && Player.GiveHealth(health.GemCount))
                         health.Purchased();
+                }
+
+                if (maxHealth != null) {
+                    if (maxHealth.Purchasable && Player.GiveMaxHealth(maxHealth.Amount, maxHealth.GemCount))
+                        maxHealth.Purchased();
                 }
                 if (stamina != null) {
                     if (stamina.Purchasable && Player.GiveStamina(stamina.Amount, stamina.GemCount))

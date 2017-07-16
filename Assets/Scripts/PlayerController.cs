@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour {
                     curStamina = MaxStamina;
                 else
                     curStamina = value;
-                staminaCooldown = Time.time - 1;
             }
             else {
                 if (value < 0)
@@ -183,19 +182,40 @@ public class PlayerController : MonoBehaviour {
         return false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnCollisionEnter2D(Collision2D other) {
         if (other.transform.tag == "Gems") {
             Instantiate(gemCollectSound, transform.position, transform.rotation);
             gemCount += 1;
             Destroy(other.gameObject);
         }
+        if (other.transform.tag == "Energy") {
+            CurStamina++;
+            Destroy(other.gameObject);
+        }
     }
 
-    public bool GiveHealth(int health, int Cost) {
+    public bool GiveHealth(int Cost) {
+        if (curHealth < MaxHealth) {
+            if (gemCount >= Cost) {
+                curHealth = MaxHealth;
+                gemCount -= Cost;
+                shopMessage.gameObject.SetActive(true);
+                shopMessage.Showtext("Healed to full health!");
+                return true;
+            }
+            shopMessage.gameObject.SetActive(true);
+            shopMessage.Showtext("Don't have enough gems to heal!");
+            return false;
+        }
+        shopMessage.gameObject.SetActive(true);
+        shopMessage.Showtext("Already fully healed!");
+        return false;
+    }
+
+    public bool GiveMaxHealth(int health, int Cost) {
         if (gemCount >= Cost) {
-            curHealth += health;
-            if (curHealth > MaxHealth)
-                MaxHealth = curHealth;
+            MaxHealth += health;
+            curHealth = MaxHealth;
             gemCount -= Cost;
             shopMessage.gameObject.SetActive(true);
             Instantiate(upgradeSound, transform.position, transform.rotation);
@@ -203,7 +223,7 @@ public class PlayerController : MonoBehaviour {
             return true;
         }
         shopMessage.gameObject.SetActive(true);
-        shopMessage.Showtext("Don't have enough gems to heal!");
+        shopMessage.Showtext("Don't have enough gems to upgrade health!");
         return false;
     }
 
@@ -217,7 +237,7 @@ public class PlayerController : MonoBehaviour {
             return true;
         }
         shopMessage.gameObject.SetActive(true);
-        shopMessage.Showtext("Don't have enough gems to buy stamina!");
+        shopMessage.Showtext("Don't have enough gems to upgrade stamina!");
         return false;
     }
 
