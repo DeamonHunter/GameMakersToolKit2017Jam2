@@ -1231,14 +1231,14 @@ CanvasRenderer:
 --- !u!1 &192844520
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1883630382541078, guid: 22c561b193a29f04983a32326ed69340,
+  m_PrefabParentObject: {fileID: 1301386432350230, guid: 58e1e9b6793ca0448a37b89b60473f06,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 192844521}
   m_Layer: 0
-  m_Name: Level Design 5
+  m_Name: Level Design 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1247,7 +1247,7 @@ GameObject:
 --- !u!4 &192844521
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4877424467329320, guid: 22c561b193a29f04983a32326ed69340,
+  m_PrefabParentObject: {fileID: 4311127874325066, guid: 58e1e9b6793ca0448a37b89b60473f06,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 192844520}
@@ -3278,7 +3278,7 @@ MonoBehaviour:
   playerDeathSound: {fileID: 82112006413236718, guid: 8832b78d2040e2749b700174a84be169,
     type: 2}
   curHealth: 0
-  gemCount: 100
+  gemCount: 0
   Weapons: 
 --- !u!212 &705944775
 SpriteRenderer:
@@ -6422,6 +6422,7 @@ MonoBehaviour:
   - {fileID: 1143548952017092, guid: 5ffce20b679c6324b9a811a1c6fdf8f7, type: 2}
   - {fileID: 1173376603639198, guid: 3145d12531394f248afc134439131baf, type: 2}
   - {fileID: 1883630382541078, guid: 22c561b193a29f04983a32326ed69340, type: 2}
+  - {fileID: 1301386432350230, guid: 58e1e9b6793ca0448a37b89b60473f06, type: 2}
   Enemies:
   - {fileID: 1943135694972620, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
   RoomSize: {x: 50, y: 70}
