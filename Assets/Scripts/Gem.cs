@@ -11,10 +11,11 @@ public class Gem : MonoBehaviour {
     void Start() {
         Vector2 rand = new Vector2(Random.Range(-MaxForce.x, MaxForce.x), Random.Range(-MaxForce.y, MaxForce.y));
         this.GetComponent<Rigidbody2D>().AddForce(rand * force, ForceMode2D.Impulse);
+        Invoke("StopSimulation", 2);
     }
 
-    // Update is called once per frame
-    void Update() {
-
+    private void StopSimulation() {
+        var rb = GetComponent<Rigidbody2D>();
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
     }
 }

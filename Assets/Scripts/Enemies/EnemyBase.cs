@@ -15,10 +15,13 @@ public abstract class EnemyBase : MonoBehaviour {
     public bool Activated;
     private float damageTime;
 
+    protected Rigidbody2D rb;
+
 
     // Use this for initialization
     void Start() {
         Player = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
         Activated = false;
     }
 
@@ -29,7 +32,7 @@ public abstract class EnemyBase : MonoBehaviour {
         health -= damage;
         if (health <= 0) {
             GameManager.instance.Combo++;
-            for (int i = 0; i < Mathf.Floor(Mathf.Log(GameManager.instance.Combo * 2) + 1); i++) {
+            for (int i = 0; i < Mathf.Floor(Mathf.Log(GameManager.instance.Combo) + 1); i++) {
                 for (int j = 0; j < 1; j++) {
                     float xGem = Random.Range(-4.0f, 4.0f);
                     float yGem = Random.Range(-4.0f, 4.0f);
