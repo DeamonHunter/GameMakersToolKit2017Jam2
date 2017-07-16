@@ -36,16 +36,16 @@ public class Enemy_2 : EnemyBase {
         }
         switch (movementDirection) {
             case 1:
-                transform.position += Time.deltaTime * moveSpeed * transform.right;
+                rb.velocity = moveSpeed * transform.right;
                 break;
             case 2:
-                transform.position += Time.deltaTime * moveSpeed * -transform.right;
+                rb.velocity = moveSpeed * -transform.right;
                 break;
             case 3:
-                transform.position += Time.deltaTime * moveSpeed * transform.up;
+                rb.velocity = moveSpeed * transform.up;
                 break;
             case 4:
-                transform.position += Time.deltaTime * moveSpeed * -transform.up;
+                rb.velocity = moveSpeed * -transform.up;
                 break;
 
         }
