@@ -6602,6 +6602,9 @@ MonoBehaviour:
   - {fileID: 1170767714192894, guid: d675e97b891f9c0469a638dab1119f4e, type: 2}
   Enemies:
   - {fileID: 1943135694972620, guid: 7cfe7152c02c8544684c29d2b0371de7, type: 2}
+  - {fileID: 1428270229916060, guid: c03883ed2fc1b834bb6275503e5e4a43, type: 2}
+  - {fileID: 1736590717282148, guid: d6cafb11e56ff9940bb3fc15a7916e4c, type: 2}
+  - {fileID: 1170563776539984, guid: f12360ecf5970384090bb3acc7764854, type: 2}
   RoomSize: {x: 25, y: 25}
   Arrow: {fileID: 803980387}
   LevelDone: 0

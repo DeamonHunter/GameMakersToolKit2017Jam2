@@ -34,7 +34,7 @@ public class LevelController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         SpawnedEnemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
-        SpawnedEnemies.AddRange(GameObject.FindGameObjectsWithTag("Crate"));
+        //SpawnedEnemies.AddRange(GameObject.FindGameObjectsWithTag("Crate"));
         if (!LevelDone && SpawnedEnemies.Count <= 0)
             FinishLevel();
         if (!DoorClosed) {
@@ -103,5 +103,19 @@ public class LevelController : MonoBehaviour {
         if (WaveEnemies == null)
             WaveEnemies = new List<int[]>();
         WaveEnemies.Add(new[] { 5 });
+        WaveEnemies.Add(new[] { 0, 1 });
+        WaveEnemies.Add(new[] { 5, 1 });
+        WaveEnemies.Add(new[] { 0, 0, 1 });
+        WaveEnemies.Add(new[] { 5, 0, 3 });
+        WaveEnemies.Add(new[] { 0, 0, 0, 1 });
+        WaveEnemies.Add(new[] { 0, 2, 0, 5 });
+        WaveEnemies.Add(new[] { 0, 0, 0, 10 });
+        WaveEnemies.Add(new[] { 20 });
+        WaveEnemies.Add(new[] { 0, 5, 0, 0 });
+        WaveEnemies.Add(new[] { 5, 2, 1 });
+        WaveEnemies.Add(new[] { 5, 2, 1 });
+        WaveEnemies.Add(new[] { 5, 2, 1 });
+        WaveEnemies.Add(new[] { 5, 2, 1 });
+
     }
 }
