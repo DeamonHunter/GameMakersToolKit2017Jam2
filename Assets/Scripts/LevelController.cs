@@ -34,6 +34,7 @@ public class LevelController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         SpawnedEnemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
+        SpawnedEnemies.AddRange(GameObject.FindGameObjectsWithTag("Crate"));
         if (!LevelDone && SpawnedEnemies.Count <= 0)
             FinishLevel();
         if (!DoorClosed) {
