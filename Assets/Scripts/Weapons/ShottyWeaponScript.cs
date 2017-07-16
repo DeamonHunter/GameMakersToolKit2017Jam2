@@ -7,6 +7,8 @@ public class ShottyWeaponScript : BaseWeaponScript {
     public float Spread;
     public float MaxDelay;
 
+    public AudioSource shotgunSound;
+
     private bool LeftSideAttacked;
 
     private Vector2 pos;
@@ -15,6 +17,7 @@ public class ShottyWeaponScript : BaseWeaponScript {
         if (_attacking)
             return 0;
 
+        Instantiate(shotgunSound, transform.position, transform.rotation);
         pos = Input.mousePosition - new Vector3(Screen.width, Screen.height) / 2;
         Player.GetComponent<Rigidbody2D>().AddForce(pos.normalized * AttackForce, ForceMode2D.Impulse);
         _lastAttack = Time.time;

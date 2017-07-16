@@ -90,6 +90,7 @@ public class LevelController : MonoBehaviour {
     }
 
     public void CloseDoor() {
+        
         Doors[CurrentDoor].DoorOpen = false;
         DoorClosed = true;
     }

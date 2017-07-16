@@ -131,6 +131,14 @@ MonoBehaviour:
   staminaUse: 25
   AdditionalStaminaUse: 25
   StaminaGainFromEnemy: 10
+  gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
+    type: 2}
+  crateSmashSound: {fileID: 82100784672712896, guid: 92b03608e8b589a4e97c795726d56ece,
+    type: 2}
+  energyCollectSound: {fileID: 82665923674136456, guid: 666a5f88549a79744b995b97a460f016,
+    type: 2}
+  spearAttack: {fileID: 82434512132222152, guid: 65b3e3a520cc17b48aa40e1b7be1aaa3,
+    type: 2}
 --- !u!212 &212263387713211258
 SpriteRenderer:
   m_ObjectHideFlags: 1

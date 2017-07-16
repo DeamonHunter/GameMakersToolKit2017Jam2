@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class LauncherWeaponScript : BaseWeaponScript {
     public GameObject Bullet;
+    public AudioSource launcherSound;
     public float AdditionalSize;
     public float AdditionalForce;
     public float SmallestSize;
@@ -13,6 +14,7 @@ public class LauncherWeaponScript : BaseWeaponScript {
         if (_attacking)
             return 0;
 
+        Instantiate(launcherSound, transform.position, transform.rotation);
         var pos = Input.mousePosition - new Vector3(Screen.width, Screen.height) / 2;
         Player.GetComponent<Rigidbody2D>().AddForce(pos.normalized * (AttackForce + chargePercentage * AdditionalForce), ForceMode2D.Impulse);
         _lastAttack = Time.time;
