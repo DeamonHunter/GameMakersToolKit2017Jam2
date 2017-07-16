@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour {
     public float StaminaGainRate;
     public float StaminaCooldownPeriod;
 
+    public AudioSource upgradeSound;
+
     public float CurStamina {
         get { return curStamina; }
         set {

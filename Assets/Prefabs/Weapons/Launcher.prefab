@@ -130,6 +130,8 @@ MonoBehaviour:
   staminaUse: 55
   StaminaGainFromEnemy: 0
   Bullet: {fileID: 1933032574887044, guid: dd2e3385e4691414898c2ecd88b04a97, type: 2}
+  launcherSound: {fileID: 82242995426405492, guid: d3d50079789bc9945bc235ee4d82fb70,
+    type: 2}
   AdditionalSize: 0.8
   AdditionalForce: -70
   SmallestSize: 0.12
