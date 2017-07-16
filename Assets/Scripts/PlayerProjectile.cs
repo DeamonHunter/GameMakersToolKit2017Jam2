@@ -59,14 +59,20 @@ public class PlayerProjectile : MonoBehaviour {
         else if (other.tag == "Shop") {
             if (Vector3.Distance(player.transform.position, other.transform.position) < 20) {
                 var weapon = other.GetComponent<WeaponBuyScript>();
-                var health = other.GetComponent<HealthUpgrade>();
+                var health = other.GetComponent<HealUpgrade>();
+                var maxHealth = other.GetComponent<MaxHealthUpgrade>();
                 var stamina = other.GetComponent<StaminaUpgrade>();
                 if (weapon != null && !weapon.Purchased) {
                     weapon.Purchased = player.UnlockWeapon(weapon.WeaponNumber, weapon.GemCount);
                 }
                 if (health != null) {
-                    if (health.Purchasable && player.GiveHealth(health.Amount, health.GemCount))
+                    if (health.Purchasable && player.GiveHealth(health.GemCount))
                         health.Purchased();
+                }
+
+                if (maxHealth != null) {
+                    if (maxHealth.Purchasable && player.GiveMaxHealth(maxHealth.Amount, maxHealth.GemCount))
+                        maxHealth.Purchased();
                 }
                 if (stamina != null) {
                     if (stamina.Purchasable && player.GiveStamina(stamina.Amount, stamina.GemCount))

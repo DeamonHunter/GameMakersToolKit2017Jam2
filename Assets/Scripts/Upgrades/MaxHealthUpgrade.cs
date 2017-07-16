@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthUpgrade : MonoBehaviour {
+public class MaxHealthUpgrade : MonoBehaviour {
     public int GemCount;
     public int Amount;
     public GameObject gemSprite;
@@ -32,7 +32,7 @@ public class HealthUpgrade : MonoBehaviour {
     }
 
     public void Purchased() {
-        GemCount += 5;
+        GemCount += 10;
         timeLock = Time.time + 1;
     }
 
