@@ -19,13 +19,14 @@ public class LevelController : MonoBehaviour {
 
     private int waveCount;
     private SwitchScript switchScript;
-    private List<GameObject> SpawnedEnemies;
+    //private List<GameObject> SpawnedEnemies;
     private int CurrentDoor;
     private GameObject currentDesign;
+    public GameObject EnemyParent;
 
     // Use this for initialization
     void Start() {
-        SpawnedEnemies = new List<GameObject>();
+        //SpawnedEnemies = new List<GameObject>();
         switchScript = GetComponentInChildren<SwitchScript>();
         LevelDone = true;
         AuthoredWaves();
@@ -33,9 +34,7 @@ public class LevelController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        SpawnedEnemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
-        SpawnedEnemies.AddRange(GameObject.FindGameObjectsWithTag("Crate"));
-        if (!LevelDone && SpawnedEnemies.Count <= 0)
+        if (!LevelDone && EnemyParent.transform.childCount == 0)
             FinishLevel();
         if (!DoorClosed) {
             Arrow.SetDirection(CurrentDoor, LevelDone);
@@ -46,10 +45,8 @@ public class LevelController : MonoBehaviour {
     }
 
     public void SpawnLevel() {
-        SpawnedEnemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
-        SpawnedEnemies.AddRange(GameObject.FindGameObjectsWithTag("Crate"));
-        foreach (var enemy in SpawnedEnemies) {
-            Destroy(enemy);
+        for (int i = EnemyParent.transform.childCount - 1; i >= 0; i--) {
+            Destroy(EnemyParent.transform.GetChild(i));
         }
         CurrentDoor = Random.Range(0, 3);
         Doors[CurrentDoor].DoorOpen = true;
@@ -58,7 +55,7 @@ public class LevelController : MonoBehaviour {
             for (int i = 0; i < wave.Length; i++) {
                 for (int j = 0; j < wave[i]; j++) {
                     Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
-                    Instantiate(Enemies[i], LevelCentres[CurrentDoor].position + rand, Quaternion.identity);
+                    Instantiate(Enemies[i], LevelCentres[CurrentDoor].position + rand, Quaternion.identity, EnemyParent.transform);
                 }
             }
         }
@@ -66,7 +63,7 @@ public class LevelController : MonoBehaviour {
             Debug.Log("Failed to find wave. Spawning random.");
             for (int i = 0; i < waveCount + 5; i++) {
                 Vector3 rand = new Vector3(Random.Range(-RoomSize.x, RoomSize.x), Random.Range(-RoomSize.y, RoomSize.y));
-                Instantiate(Enemies[0], LevelCentres[CurrentDoor].position + rand, Quaternion.identity);
+                Instantiate(Enemies[0], LevelCentres[CurrentDoor].position + rand, Quaternion.identity, EnemyParent.transform);
             }
 
         }
@@ -95,10 +92,18 @@ public class LevelController : MonoBehaviour {
     }
 
     public void StartLevel() {
-        foreach (var enemy in SpawnedEnemies) {
-            var basic = enemy.GetComponent<EnemyBase>();
-            if (basic != null)
-                basic.ActivateEnemy();
+        for (int i = 0; i < EnemyParent.transform.childCount; i++) {
+            if (EnemyParent.transform.GetChild(i).name == "Enemy_4(Clone)") {
+                var basic = EnemyParent.transform.GetChild(i).GetComponentInChildren<EnemyBase>();
+                if (basic != null)
+                    basic.ActivateEnemy();
+            }
+            else {
+
+                var basic = EnemyParent.transform.GetChild(i).GetComponent<EnemyBase>();
+                if (basic != null)
+                    basic.ActivateEnemy();
+            }
         }
     }
 
