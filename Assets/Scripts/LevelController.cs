@@ -96,7 +96,9 @@ public class LevelController : MonoBehaviour {
 
     public void StartLevel() {
         foreach (var enemy in SpawnedEnemies) {
-            enemy.GetComponent<EnemyBase>().ActivateEnemy();
+            var basic = enemy.GetComponent<EnemyBase>();
+            if (basic != null)
+                basic.ActivateEnemy();
         }
     }
 
