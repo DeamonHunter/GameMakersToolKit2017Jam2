@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour {
                     curStamina = MaxStamina;
                 else
                     curStamina = value;
-                staminaCooldown = Time.time - 1;
             }
             else {
                 if (value < 0)
@@ -180,6 +179,10 @@ public class PlayerController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.transform.tag == "Gems") {
             gemCount += 1;
+            Destroy(other.gameObject);
+        }
+        if (other.transform.tag == "Energy") {
+            CurStamina++;
             Destroy(other.gameObject);
         }
     }

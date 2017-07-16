@@ -2742,6 +2742,7 @@ GameObject:
   - component: {fileID: 705944774}
   - component: {fileID: 705944773}
   - component: {fileID: 705944772}
+  - component: {fileID: 705944777}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2763,7 +2764,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5.12
+  m_Radius: 3
 --- !u!50 &705944773
 Rigidbody2D:
   serializedVersion: 4
@@ -2872,6 +2873,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &705944777
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 705944771}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
 --- !u!1 &718270573
 GameObject:
   m_ObjectHideFlags: 0
