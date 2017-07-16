@@ -54,7 +54,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
                 Vector3 gemSpawn = new Vector3(xGem, yGem);
                 Instantiate(gem, transform.position + gemSpawn, transform.rotation);
             }
-            GameManager.instance.ComboTracker(3.0f);
+            GameManager.instance.Combo *= 2;
             Destroy(other.gameObject);
             Player.RandomWeapon();
 

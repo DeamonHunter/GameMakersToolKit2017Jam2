@@ -13,8 +13,6 @@ public abstract class EnemyBase : MonoBehaviour {
     public float damageRate = 0.2f;
     public bool Activated;
     private float damageTime;
-    private float killTime;
-    private float killRate = 0.1f;
 
 
     // Use this for initialization
@@ -28,19 +26,17 @@ public abstract class EnemyBase : MonoBehaviour {
 
     public virtual void TakeDamage(float damage) {
         health -= damage;
-        if (health <= 0 && Time.time > killTime) {
-            for (int i = 0; i < GameManager.instance.comboTimeRemaining / GameManager.instance.maxComboTime; i++) {
+        if (health <= 0) {
+            GameManager.instance.Combo++;
+            for (int i = 0; i < GameManager.instance.Combo; i++) {
                 for (int j = 0; j < 1; j++) {
-                    int xGem = Random.Range(1, 4);
-                    int yGem = Random.Range(1, 4);
+                    float xGem = Random.Range(-4.0f, 4.0f);
+                    float yGem = Random.Range(-4.0f, 4.0f);
                     Vector3 gemSpawn = new Vector3(xGem, yGem);
                     Instantiate(gem, transform.position + gemSpawn, transform.rotation);
                 }
             }
             Instantiate(deathEffect, transform.position, transform.rotation);
-            //records the current enemy death time
-            GameManager.instance.ComboTracker(3.0f);
-            killTime = Time.time + killRate;
             Destroy(this.gameObject);
         }
     }
