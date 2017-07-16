@@ -108,7 +108,8 @@ MonoBehaviour:
   gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
   deathEffect: {fileID: 1197638264422824, guid: 276b00f4e23a1114e874d99a9e7b5fca,
     type: 2}
-  gm: {fileID: 0}
+  FlyAwayText: {fileID: 1706723837902418, guid: 25779456a96e01f4f9d671f4ad500577,
+    type: 2}
   moveSpeed: 5
   health: 1
   damage: 1

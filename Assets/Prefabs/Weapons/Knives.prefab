@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4191120231660032}
   - component: {fileID: 111739697542338186}
   - component: {fileID: 114197824190286074}
+  - component: {fileID: 50655316622791686}
   m_Layer: 0
   m_Name: Knives
   m_TagString: Untagged
@@ -105,6 +106,26 @@ Transform:
   m_Father: {fileID: 4191120231660032}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50655316622791686
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1150868856715622}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!61 &61565392961024466
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -199,6 +220,8 @@ MonoBehaviour:
   StartRotation: 0
   Player: {fileID: 0}
   gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
+  CrateFlyAway: {fileID: 1706723837902418, guid: c30248bada2a2114189eaad3d08f26d8,
+    type: 2}
   AttackForce: 20
   AttackTimeout: 0.08
   Charger: 0

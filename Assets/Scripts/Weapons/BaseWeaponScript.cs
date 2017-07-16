@@ -7,6 +7,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
     public float StartRotation;
     public PlayerController Player;
     public GameObject gem;
+    public GameObject CrateFlyAway;
     public float AttackForce;
     public float AttackTimeout;
 
@@ -49,11 +50,12 @@ public abstract class BaseWeaponScript : MonoBehaviour {
         }
         else if (other.tag == "Crate") {
             for (int j = 0; j < 7; j++) {
-                int xGem = Random.Range(1, 4);
-                int yGem = Random.Range(1, 4);
+                float xGem = Random.Range(-4.0f, 4.0f);
+                float yGem = Random.Range(-4.0f, 4.0f);
                 Vector3 gemSpawn = new Vector3(xGem, yGem);
-                Instantiate(gem, transform.position + gemSpawn, transform.rotation);
+                Instantiate(gem, other.transform.position + gemSpawn, other.transform.rotation);
             }
+            Instantiate(CrateFlyAway, other.transform.position, other.transform.rotation);
             GameManager.instance.Combo *= 2;
             Destroy(other.gameObject);
             Player.RandomWeapon();

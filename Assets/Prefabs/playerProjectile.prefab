@@ -105,6 +105,8 @@ MonoBehaviour:
   staminaGain: 0
   MoveDirection: {x: 0, y: 0}
   gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
+  CrateFlyAway: {fileID: 1706723837902418, guid: c30248bada2a2114189eaad3d08f26d8,
+    type: 2}
 --- !u!212 &212086089640841138
 SpriteRenderer:
   m_ObjectHideFlags: 1
