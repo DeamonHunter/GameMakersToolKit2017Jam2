@@ -44,7 +44,7 @@ public class LevelController : MonoBehaviour {
         if (!WaveStarted && WaveSpawned) {
             Arrow.SetDirection(CurrentDoor, false);
         }
-        else if (WaveFinished) {
+        else if (WaveFinished && !DoorClosed) {
             Arrow.SetDirection(CurrentDoor, true);
         }
         else {
