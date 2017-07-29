@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50473624245992084}
   - component: {fileID: 114110871123093162}
   - component: {fileID: 60354345333392718}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: greenGem
   m_TagString: Gems
   m_Icon: {fileID: 0}
@@ -112,7 +112,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxForce: {x: 20, y: 20}
+  CollectSound: {fileID: 1804351324202988, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
+    type: 2}
   SpeedMult: 3
+  IsGem: 1
 --- !u!212 &212607650916162738
 SpriteRenderer:
   m_ObjectHideFlags: 1

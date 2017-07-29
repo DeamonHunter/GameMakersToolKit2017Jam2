@@ -219,18 +219,6 @@ public class PlayerController : MonoBehaviour {
         return false;
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        if (other.transform.tag == "Gems") {
-            Instantiate(gemCollectSound, transform.position, transform.rotation);
-            gemCount += 1;
-            Destroy(other.gameObject);
-        }
-        if (other.transform.tag == "Energy") {
-            CurStamina++;
-            Destroy(other.gameObject);
-        }
-    }
-
     public bool GiveHealth(int Cost) {
         if (curHealth < MaxHealth) {
             if (gemCount >= Cost) {

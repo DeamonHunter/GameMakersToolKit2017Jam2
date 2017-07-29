@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 111739697542338186}
   - component: {fileID: 114197824190286074}
   - component: {fileID: 50984588098450118}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Knives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4468040075932570}
   - component: {fileID: 212927979698460938}
   - component: {fileID: 61565392961024466}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Knife Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4199624906639360}
   - component: {fileID: 212259699815138666}
   - component: {fileID: 61877286548558994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Knife Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}

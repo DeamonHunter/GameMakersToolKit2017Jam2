@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4662017864990300}
   - component: {fileID: 212999734755520600}
   - component: {fileID: 58450935497644156}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Circle Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

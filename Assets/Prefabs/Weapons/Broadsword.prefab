@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 111085425215817156}
   - component: {fileID: 61317997299988994}
   - component: {fileID: 50732723666819680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Broadsword
   m_TagString: Untagged
   m_Icon: {fileID: 0}

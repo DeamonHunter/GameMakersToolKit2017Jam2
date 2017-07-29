@@ -20,15 +20,15 @@ TagManager:
   - UI
   - 
   - 
-  - Obstructions
+  - Player
+  - Player Weapon
+  - Trigger
+  - Shop
+  - Enemy
+  - Enemy Projectile
+  - Walls
   - Crate
-  - Enemies
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Gem
   - 
   - 
   - 

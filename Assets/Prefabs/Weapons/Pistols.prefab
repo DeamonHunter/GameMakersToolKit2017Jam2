@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4059364567130672}
   - component: {fileID: 111526020767825604}
   - component: {fileID: 114214971562035136}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pistols
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4716334867581950}
   - component: {fileID: 212929974019010216}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4720276434002672}
   - component: {fileID: 212379742683452364}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

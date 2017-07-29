@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50473624245992084}
   - component: {fileID: 114110871123093162}
   - component: {fileID: 61050148513039650}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Energy Pellet
   m_TagString: Energy
   m_Icon: {fileID: 0}
@@ -100,7 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxForce: {x: 3, y: 3}
+  CollectSound: {fileID: 1686548178464448, guid: 666a5f88549a79744b995b97a460f016,
+    type: 2}
   SpeedMult: 3
+  IsGem: 0
 --- !u!212 &212607650916162738
 SpriteRenderer:
   m_ObjectHideFlags: 1
