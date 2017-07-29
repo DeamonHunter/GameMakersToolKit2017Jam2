@@ -8,6 +8,8 @@ public class Gem : MonoBehaviour {
     float force = 5f;
     private bool moveTowardsPlayer;
     private Rigidbody2D rb;
+    private float startedMovingTime;
+    public float SpeedMult;
 
     // Use this for initialization
     void Start() {
@@ -20,11 +22,12 @@ public class Gem : MonoBehaviour {
     private void StopSimulation() {
         rb.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
         moveTowardsPlayer = true;
+        startedMovingTime = Time.time;
     }
 
     private void Update() {
         if (moveTowardsPlayer) {
-            rb.velocity = (GameManager.instance.player.transform.position - transform.position).normalized * 3;
+            rb.velocity = (GameManager.instance.player.transform.position - transform.position).normalized * 3 * (1 + (Time.time - startedMovingTime) * SpeedMult);
         }
     }
 }
