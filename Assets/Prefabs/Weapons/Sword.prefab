@@ -129,7 +129,7 @@ MonoBehaviour:
   Invunerable: 0
   TimeToCharge: 0
   chargePercentage: 0
-  staminaUse: 12
+  staminaUse: 8
   AdditionalStaminaUse: 0
   StaminaGainFromEnemy: 2
   gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,

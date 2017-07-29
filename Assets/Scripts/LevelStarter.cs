@@ -7,7 +7,7 @@ public class LevelStarter : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player")
-            if (!LevelController.LevelDone && !LevelController.DoorClosed) {
+            if (!LevelController.WaveStarted && LevelController.WaveSpawned) {
                 LevelController.CloseDoor();
                 LevelController.StartLevel();
             }

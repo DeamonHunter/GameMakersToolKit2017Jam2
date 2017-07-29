@@ -14,7 +14,11 @@ public class LevelController : MonoBehaviour {
     public Vector2 RoomSize;
     public ArrowScript Arrow;
 
-    public bool LevelDone;
+
+    public bool WaveSpawned;
+    public bool WaveStarted;
+    public bool WaveFinished;
+
     public bool DoorClosed;
 
     private int waveCount;
@@ -28,16 +32,20 @@ public class LevelController : MonoBehaviour {
     void Start() {
         //SpawnedEnemies = new List<GameObject>();
         switchScript = GetComponentInChildren<SwitchScript>();
-        LevelDone = true;
+        DoorClosed = true;
         AuthoredWaves();
     }
 
     // Update is called once per frame
     void Update() {
-        if (!LevelDone && EnemyParent.transform.childCount == 0)
+        if (WaveStarted && EnemyParent.transform.childCount == 0)
             FinishLevel();
-        if (!DoorClosed) {
-            Arrow.SetDirection(CurrentDoor, LevelDone);
+
+        if (!WaveStarted && WaveSpawned) {
+            Arrow.SetDirection(CurrentDoor, false);
+        }
+        else if (WaveFinished) {
+            Arrow.SetDirection(CurrentDoor, true);
         }
         else {
             Arrow.ShowArrow = false;
@@ -103,8 +111,8 @@ public class LevelController : MonoBehaviour {
                 break;
         }
         currentDesign.transform.rotation = Quaternion.Euler(0, 0, degrees);
-        LevelDone = false;
-        DoorClosed = false;
+        WaveFinished = false;
+        WaveSpawned = true;
     }
 
     public void StartLevel() {
@@ -125,16 +133,19 @@ public class LevelController : MonoBehaviour {
 
     public void FinishLevel() {
         Doors[CurrentDoor].DoorOpen = true;
-        LevelDone = true;
         DoorClosed = false;
+        WaveFinished = true;
+        WaveSpawned = false;
+        WaveStarted = false;
         switchScript.LeverHit = false;
         waveCount++;
     }
 
     public void CloseDoor() {
-
-        Doors[CurrentDoor].DoorOpen = false;
         DoorClosed = true;
+        Doors[CurrentDoor].DoorOpen = false;
+        if (!WaveFinished)
+            WaveStarted = true;
     }
 
     public void DestroyDesign() {
