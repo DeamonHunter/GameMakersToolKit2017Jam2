@@ -3411,7 +3411,7 @@ MonoBehaviour:
   playerDeathSound: {fileID: 82112006413236718, guid: 8832b78d2040e2749b700174a84be169,
     type: 2}
   curHealth: 0
-  gemCount: 0
+  gemCount: 100
   Weapons: 
 --- !u!212 &705944775
 SpriteRenderer:

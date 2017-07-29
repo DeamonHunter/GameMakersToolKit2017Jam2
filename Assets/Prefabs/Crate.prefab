@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4033556165109580}
   - component: {fileID: 212503212690229772}
   - component: {fileID: 61584862629468026}
-  - component: {fileID: 50875616401536794}
-  m_Layer: 9
+  - component: {fileID: 50580884793728842}
+  m_Layer: 0
   m_Name: Crate
   m_TagString: Crate
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50875616401536794
+--- !u!50 &50580884793728842
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -54,7 +54,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

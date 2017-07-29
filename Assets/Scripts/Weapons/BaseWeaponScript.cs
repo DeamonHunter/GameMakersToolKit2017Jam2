@@ -56,6 +56,7 @@ public abstract class BaseWeaponScript : MonoBehaviour {
             }
         }
         else if (other.tag == "Crate") {
+            Destroy(other.gameObject);
             for (int j = 0; j < 7; j++) {
                 float xGem = Random.Range(-4.0f, 4.0f);
                 float yGem = Random.Range(-4.0f, 4.0f);
@@ -65,7 +66,6 @@ public abstract class BaseWeaponScript : MonoBehaviour {
             Instantiate(CrateFlyAway, other.transform.position, other.transform.rotation);
             GameManager.instance.Combo *= 2;
             Instantiate(crateSmashSound, transform.position, transform.rotation);
-            Destroy(other.gameObject);
             Player.RandomWeapon();
 
         }

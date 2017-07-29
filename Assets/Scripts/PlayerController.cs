@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb;
     private BaseWeaponScript weapon;
+    private int curWeaponID;
     public Vector3 HalfScreenSize;
 
     public GameObject[] ChooseableWeapons;
     private List<int> weaponsPurchased = new List<int>();
-    private GameObject curWeapon;
     public ChargeBarScript ChargeBar;
     public ShopMessageScript shopMessage;
 
@@ -63,11 +63,10 @@ public class PlayerController : MonoBehaviour {
         playerDead = false;
         rb = GetComponent<Rigidbody2D>();
         weaponsPurchased.Add(6);
-        RandomWeapon();
+        GivePlayerWeapon(6);
         curStamina = MaxStamina;
         curHealth = MaxHealth;
         HalfScreenSize = new Vector3(Screen.width, Screen.height) / 2;
-        gemCount = 0;
 
     }
 
@@ -145,11 +144,24 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void RandomWeapon() {
-        if (curWeapon != null)
-            Destroy(curWeapon);
-        int rand = Random.Range(0, weaponsPurchased.Count);
-        curWeapon = Instantiate(ChooseableWeapons[weaponsPurchased[rand]], transform.position, transform.rotation, transform);
-        weapon = curWeapon.GetComponent<BaseWeaponScript>();
+        if (weaponsPurchased.Count < 2)
+            GivePlayerWeapon(weaponsPurchased[0]);
+        else {
+            while (true) {
+                int rand = Random.Range(0, weaponsPurchased.Count);
+                if (weaponsPurchased[rand] != curWeaponID) {
+                    GivePlayerWeapon(weaponsPurchased[rand]);
+                    break;
+                }
+            }
+        }
+    }
+
+    public void GivePlayerWeapon(int weaponID) {
+        if (weapon != null)
+            Destroy(weapon.gameObject);
+        weapon = Instantiate(ChooseableWeapons[weaponID], transform.position, transform.rotation, transform).GetComponent<BaseWeaponScript>();
+        curWeaponID = weaponID;
     }
 
     public bool UnlockWeapon(int weaponID, int weaponPrice) {

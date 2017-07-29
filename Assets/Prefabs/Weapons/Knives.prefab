@@ -38,7 +38,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4468040075932570}
   - component: {fileID: 212927979698460938}
-  - component: {fileID: 114148824496716604}
   - component: {fileID: 61565392961024466}
   m_Layer: 0
   m_Name: Knife Right
@@ -57,7 +56,6 @@ GameObject:
   - component: {fileID: 4199624906639360}
   - component: {fileID: 212259699815138666}
   - component: {fileID: 61877286548558994}
-  - component: {fileID: 114399330159631136}
   m_Layer: 0
   m_Name: Knife Left
   m_TagString: Untagged
@@ -192,19 +190,6 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &114148824496716604
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1527365242297342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c2ef67a1b61924aaf9900b6cbdafeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  StaminaGainFromEnemy: 10
 --- !u!114 &114197824190286074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,19 +225,6 @@ MonoBehaviour:
     type: 2}
   attackSound: {fileID: 82481566753498306, guid: 517bca640809f5945b4e8cbc53be5538,
     type: 2}
---- !u!114 &114399330159631136
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1869371205274144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c2ef67a1b61924aaf9900b6cbdafeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  StaminaGainFromEnemy: 10
 --- !u!212 &212259699815138666
 SpriteRenderer:
   m_ObjectHideFlags: 1
