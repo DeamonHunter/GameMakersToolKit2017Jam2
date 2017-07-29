@@ -123,7 +123,7 @@ MonoBehaviour:
   CrateFlyAway: {fileID: 1706723837902418, guid: c30248bada2a2114189eaad3d08f26d8,
     type: 2}
   Energy: {fileID: 1789459229555730, guid: 1e8463e12480b4b4e8dd935888837509, type: 2}
-  AttackForce: 40
+  AttackForce: 45
   AttackTimeout: 0.3
   Charger: 0
   Invunerable: 0

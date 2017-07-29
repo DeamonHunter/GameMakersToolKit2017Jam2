@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour {
     public float Speed;
     public float StaminaDepletionRate;
     public float StaminaGainRate;
+    public float StaminaOutsideBattleMult;
     public float StaminaCooldownPeriod;
+    public float StaminaCooldownOutsideBattleMult;
 
     public AudioSource upgradeSound;
     public AudioSource gemCollectSound;
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour {
                     curStamina = 0;
                 else
                     curStamina = value;
-                staminaCooldown = Time.time + StaminaCooldownPeriod;
+                staminaCooldown = Time.time + (GameManager.instance.level.WaveStarted ? StaminaCooldownPeriod : StaminaCooldownPeriod * StaminaCooldownOutsideBattleMult);
 
             }
         }
@@ -126,7 +128,7 @@ public class PlayerController : MonoBehaviour {
     private void RegainStamina() {
         if (Time.time < staminaCooldown)
             return;
-        curStamina += Time.deltaTime * StaminaGainRate;
+        curStamina += Time.deltaTime * (GameManager.instance.level.WaveStarted ? StaminaGainRate : StaminaGainRate * StaminaOutsideBattleMult);
         if (curStamina > MaxStamina)
             curStamina = MaxStamina;
     }

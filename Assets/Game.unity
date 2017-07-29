@@ -3401,7 +3401,9 @@ MonoBehaviour:
   Speed: 200
   StaminaDepletionRate: 180
   StaminaGainRate: 130
+  StaminaOutsideBattleMult: 2.5
   StaminaCooldownPeriod: 0.66
+  StaminaCooldownOutsideBattleMult: 0.6
   upgradeSound: {fileID: 82268659311704154, guid: a01a7f8badbf01042bf640dcf2f3bc6e,
     type: 2}
   gemCollectSound: {fileID: 82749116806982924, guid: 1646acaf82b8e5b4ca584f82e5d5d430,
@@ -6562,7 +6564,9 @@ MonoBehaviour:
   - {fileID: 1483629741608764, guid: fff95b144e193764e8ae62888490c020, type: 2}
   RoomSize: {x: 50, y: 60}
   Arrow: {fileID: 803980387}
-  LevelDone: 0
+  WaveSpawned: 0
+  WaveStarted: 0
+  WaveFinished: 0
   DoorClosed: 0
   EnemyParent: {fileID: 4998942}
 --- !u!1 &1272490701
@@ -7257,6 +7261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 705944771}
+  level: {fileID: 1269541111}
   maxComboTime: 4
   comboTimeRemaining: 0
   gameOverText: {fileID: 188159491}
