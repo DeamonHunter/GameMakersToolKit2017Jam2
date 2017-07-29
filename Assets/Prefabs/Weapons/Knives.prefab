@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4191120231660032}
   - component: {fileID: 111739697542338186}
   - component: {fileID: 114197824190286074}
-  - component: {fileID: 50655316622791686}
+  - component: {fileID: 50984588098450118}
   m_Layer: 0
   m_Name: Knives
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Transform:
   m_Father: {fileID: 4191120231660032}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50655316622791686
+--- !u!50 &50984588098450118
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -122,9 +122,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!61 &61565392961024466
 BoxCollider2D:
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397b675b077f71b4ca503d4d2b3f1c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartOffset: {x: 0, y: 1}
+  StartOffset: {x: 0, y: 0}
   StartRotation: 0
   Player: {fileID: 0}
   gem: {fileID: 1789459229555730, guid: ad7ab001ac9110a44aea028f1ce30efa, type: 2}
