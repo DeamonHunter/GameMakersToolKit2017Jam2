@@ -96,7 +96,7 @@ public class PlayerProjectile : MonoBehaviour {
             Destroy(other.gameObject);
         }
         else if (other.tag != "Trigger" && other.tag != "Player") {
-            if (other.GetComponent<PlayerProjectile>() == null)
+            if (other.GetComponent<EnemyProjectile>() == null)
                 Destroy(gameObject);
         }
     }
