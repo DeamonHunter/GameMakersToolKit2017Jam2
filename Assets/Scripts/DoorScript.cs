@@ -52,5 +52,6 @@ public class DoorScript : MonoBehaviour {
         }
 
         box.enabled = progress < 0.8;
+        transform.position = progress < 0.8 ? new Vector3(transform.position.x, transform.position.y, -0.5f) : new Vector3(transform.position.x, transform.position.y, 0.5f);
     }
 }
