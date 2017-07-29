@@ -3396,7 +3396,7 @@ MonoBehaviour:
   - {fileID: 1195284658414926, guid: 264e4f0794e8d204791172a16344540a, type: 2}
   ChargeBar: {fileID: 431857805}
   shopMessage: {fileID: 904765295}
-  MaxHealth: 5
+  MaxHealth: 10
   MaxStamina: 100
   Speed: 200
   StaminaDepletionRate: 180

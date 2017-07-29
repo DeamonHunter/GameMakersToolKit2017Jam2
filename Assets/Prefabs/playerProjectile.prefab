@@ -86,7 +86,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 12, y: 12}
   m_EdgeRadius: 0
 --- !u!114 &114532774842431650
 MonoBehaviour:
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0605947bc446d8b4b8081692c3b28ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0.5
-  moveSpeed: 50
+  lifeTime: 0.75
+  moveSpeed: 60
   damage: 2
   staminaGain: 0
   MoveDirection: {x: 0, y: 0}
