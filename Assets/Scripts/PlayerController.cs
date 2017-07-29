@@ -169,6 +169,7 @@ public class PlayerController : MonoBehaviour {
             if (!weaponsPurchased.Contains(weaponID)) {
                 weaponsPurchased.Add(weaponID);
                 gemCount -= weaponPrice;
+                GivePlayerWeapon(weaponID);
                 shopMessage.gameObject.SetActive(true);
                 switch (weaponID) {
                     case 0:

@@ -36,6 +36,8 @@ public abstract class BaseWeaponScript : MonoBehaviour {
         Player = transform.parent.gameObject.GetComponent<PlayerController>();
         transform.localPosition = StartOffset;
         transform.localRotation = Quaternion.Euler(0, 0, StartRotation);
+        _attacking = true;
+        _lastAttack = Time.time + 0.25f;
     }
 
     void Update() {
