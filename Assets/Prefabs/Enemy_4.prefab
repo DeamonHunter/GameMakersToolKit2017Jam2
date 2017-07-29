@@ -39,8 +39,7 @@ GameObject:
   - component: {fileID: 212104727070275434}
   - component: {fileID: 50525370711355282}
   - component: {fileID: 114790834123860420}
-  - component: {fileID: 60092587051884156}
-  - component: {fileID: 60134729763189094}
+  - component: {fileID: 60353828116704032}
   m_Layer: 10
   m_Name: Enemy_4
   m_TagString: Enemy
@@ -55,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1170563776539984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.658, y: 126.2, z: 0}
+  m_LocalPosition: {x: 27.958618, y: 118.13992, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 4605891080140692}
@@ -68,7 +67,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1274798721343272}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.8243434, y: 4.06, z: 0}
   m_LocalScale: {x: 0.06666667, y: 0.06666667, z: 1}
   m_Children: []
@@ -95,51 +94,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60092587051884156
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1274798721343272}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 10.24, y: 10.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 5.12, y: 0.04}
-      - {x: 5.12, y: 0.099999994}
-      - {x: 4.2999997, y: 0.91999996}
-      - {x: 1.6899999, y: 3.46}
-      - {x: 0.17, y: 4.95}
-      - {x: -0.01, y: 5.12}
-      - {x: -0.06, y: 5.12}
-      - {x: -0.88, y: 4.2999997}
-      - {x: -3.4199998, y: 1.6899999}
-      - {x: -4.91, y: 0.17}
-      - {x: -5.0899997, y: -0.02}
-      - {x: -5.0899997, y: -0.049999997}
-      - {x: -4.2599998, y: -0.88}
-      - {x: -1.65, y: -3.4199998}
-      - {x: -0.64, y: -4.42}
-      - {x: 0.049999997, y: -5.0899997}
-      - {x: 0.089999996, y: -5.0899997}
-      - {x: 0.94, y: -4.23}
-      - {x: 1.9399999, y: -3.1999998}
-      - {x: 4.46, y: -0.64}
---- !u!60 &60134729763189094
+--- !u!60 &60353828116704032
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
