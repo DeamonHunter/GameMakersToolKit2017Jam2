@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour {
         }
 
         if (PlayerController.playerDead && !gameOverText.enabled) {
-            Invoke("RestartGame", 3);
+            StartCoroutine("RestartGame");
             SlowDown();
             gameOverText.enabled = true;
             gameOverImage.SetActive(true);
@@ -95,7 +95,8 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    private void RestartGame() {
+    private IEnumerator RestartGame() {
+        yield return new WaitForSecondsRealtime(3);
         SceneManager.LoadScene(0);
     }
 
