@@ -19,13 +19,17 @@ public class FadeInScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        Debug.Log(progress);
         if (progress < MaxProgress) {
-            progress += Time.deltaTime;
+            progress += Time.unscaledDeltaTime;
             if (progress >= MaxProgress)
                 progress = MaxProgress;
             image.color = new Color(image.color.r, image.color.r, image.color.b, Mathf.Lerp(0, MaxProgress, progress));
         }
+    }
 
-
+    public void ResetProgress() {
+        progress = 0;
+        image.color = new Color(image.color.r, image.color.r, image.color.b, 0);
     }
 }

@@ -73,9 +73,9 @@ GameObject:
   - component: {fileID: 212425867540478632}
   - component: {fileID: 61167715366903982}
   - component: {fileID: 114292770765010172}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Hurt Tile
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

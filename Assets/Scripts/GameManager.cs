@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour {
     int timeToAdd;
     public Text gameOverText;
     public GameObject gameOverImage;
+    public Text PauseText;
+    public Text PauseTextSmall;
+    public bool Paused;
 
 
     void Awake() {
@@ -42,8 +45,16 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            SceneManager.LoadScene(0);
+        if (Paused && Input.GetMouseButtonDown(0)) {
+            PauseText.enabled = false;
+            PauseTextSmall.enabled = false;
+            gameOverImage.GetComponent<FadeInScript>().ResetProgress();
+            gameOverImage.SetActive(false);
+            Paused = false;
+            Time.timeScale = 1;
+        }
+
+
         if (Input.GetKeyDown(KeyCode.P) && player != null)
             player.GetComponent<PlayerController>().gemCount += 500;
 
@@ -58,11 +69,23 @@ public class GameManager : MonoBehaviour {
             combo = 0;
         }
 
-        if (PlayerController.playerDead) {
+        if (PlayerController.playerDead && !gameOverText.enabled) {
             Invoke("RestartGame", 3);
+            SlowDown();
             gameOverText.enabled = true;
             gameOverImage.SetActive(true);
 
+        }
+        else if (!PlayerController.playerDead && Input.GetKeyDown(KeyCode.Escape)) {
+            if (!Paused) {
+                PauseText.enabled = true;
+                PauseTextSmall.enabled = true;
+                gameOverImage.SetActive(true);
+                Paused = true;
+                Time.timeScale = 0;
+            }
+            else
+                SceneManager.LoadScene(0);
         }
         //Debug.Log(comboTimeRemaining);
     }
@@ -74,5 +97,14 @@ public class GameManager : MonoBehaviour {
 
     private void RestartGame() {
         SceneManager.LoadScene(0);
+    }
+
+    private void SlowDown() {
+        if (Time.timeScale - 0.05 < 0)
+            Time.timeScale = 0;
+        else {
+            Time.timeScale -= 0.05f;
+            Invoke("SlowDown", 0.033f);
+        }
     }
 }

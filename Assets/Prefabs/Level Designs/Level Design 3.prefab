@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212430896221647332}
   - component: {fileID: 61089638716979658}
   - component: {fileID: 114017131511642870}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hurt Tile (3)
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,9 +55,9 @@ GameObject:
   - component: {fileID: 212848018003677012}
   - component: {fileID: 61129687956016180}
   - component: {fileID: 114780524825331540}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hurt Tile (2)
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,9 +73,9 @@ GameObject:
   - component: {fileID: 212751382256414736}
   - component: {fileID: 61077997666512310}
   - component: {fileID: 114987205362355388}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hurt Tile
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,9 +91,9 @@ GameObject:
   - component: {fileID: 212263434642231898}
   - component: {fileID: 61094613281465942}
   - component: {fileID: 114223225850043176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hurt Tile (1)
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
